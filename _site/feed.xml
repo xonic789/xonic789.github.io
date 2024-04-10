@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Xonic의 블로그</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2024-04-10T19:58:51+09:00</updated>
+  <updated>2024-04-10T23:41:22+09:00</updated>
   <author>
     <name>lee seung woo</name>
     <uri>http://localhost:4000/</uri>
@@ -61,7 +61,7 @@ tags: [TAG]     # TAG names should always be lowercase
     <link href="http://localhost:4000/posts/software-professional/" rel="alternate" type="text/html" title="소프트웨어 장인 정신" />
     <published>2024-04-05T00:00:00+09:00</published>
   
-    <updated>2024-04-07T00:56:02+09:00</updated>
+    <updated>2024-04-10T20:00:12+09:00</updated>
   
     <id>http://localhost:4000/posts/software-professional/</id>
     <content src="http://localhost:4000/posts/software-professional/" />
