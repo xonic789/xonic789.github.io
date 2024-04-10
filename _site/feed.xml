@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Xonic의 블로그</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2024-04-10T23:43:09+09:00</updated>
+  <updated>2024-04-10T23:54:57+09:00</updated>
   <author>
     <name>lee seung woo</name>
     <uri>http://localhost:4000/</uri>
@@ -24,7 +24,7 @@
     <link href="http://localhost:4000/posts/how-to-write-a-new-post/" rel="alternate" type="text/html" title="jekyll chirpy theme 사용법" />
     <published>2024-04-10T00:00:00+09:00</published>
   
-    <updated>2024-04-10T00:00:00+09:00</updated>
+    <updated>2024-04-10T23:43:09+09:00</updated>
   
     <id>http://localhost:4000/posts/how-to-write-a-new-post/</id>
     <content src="http://localhost:4000/posts/how-to-write-a-new-post/" />
@@ -61,7 +61,7 @@ tags: [TAG]     # TAG names should always be lowercase
     <link href="http://localhost:4000/posts/software-professional/" rel="alternate" type="text/html" title="소프트웨어 장인 정신" />
     <published>2024-04-05T00:00:00+09:00</published>
   
-    <updated>2024-04-10T20:00:12+09:00</updated>
+    <updated>2024-04-10T23:43:09+09:00</updated>
   
     <id>http://localhost:4000/posts/software-professional/</id>
     <content src="http://localhost:4000/posts/software-professional/" />
@@ -91,6 +91,43 @@ tags: [TAG]     # TAG names should always be lowercase
   테스트가 코딩 방향을 주도하면 복잡한 코드를 작성하는 것 자체가 어려워진다.
     
       정확히 요구사항만큼만 만족...</summary>
+
+  </entry>
+
+  
+  <entry>
+    <title>토이프로젝트 회고</title>
+    <link href="http://localhost:4000/posts/%ED%86%A0%EC%9D%B4%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%ED%9A%8C%EA%B3%A0/" rel="alternate" type="text/html" title="토이프로젝트 회고" />
+    <published>2021-06-16T00:00:00+09:00</published>
+  
+    <updated>2021-06-16T00:00:00+09:00</updated>
+  
+    <id>http://localhost:4000/posts/%ED%86%A0%EC%9D%B4%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%ED%9A%8C%EA%B3%A0/</id>
+    <content src="http://localhost:4000/posts/%ED%86%A0%EC%9D%B4%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%ED%9A%8C%EA%B3%A0/" />
+    <author>
+      <name>lee seung woo</name>
+    </author>
+
+  
+    
+    <category term="회고" />
+    
+  
+
+  <summary>docker, WSL2, linux OS, Cloud Server(NCP), nginx, Spring boot, JPA,
+Spring data JPA, QueryDSL, AWS S3
+
+https://okky.kr 에 토이프로젝트 구인글을 올렸고, 뜻대로 프론트개발자 2명, 서버개발자 1명을 모집하여
+
+총 구성인원은 프론트개발자 2명, 서버개발자 본인포함 2명, 웹 디자이너까지 5명이었다.
+
+프로젝트 리딩이 이토록 조원 컨트롤이 안될줄은 몰랐다.
+게다가 접점이 있는 사람들이 아니었다보니 더욱 힘들었던 것 같다.
+
+기획단계
+
+기획단계에선 조원들의 여러 의견과 아이디어를 조합하여 최종적으로 중고책거래 웹 어플리케이션이 뽑혔다.
+요구사항 등을 적절히 분석하지 못했는지, 기획단계에선 부족한점이 많았다고 생각한다...</summary>
 
   </entry>
 
