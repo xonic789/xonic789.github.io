@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Xonic의 블로그</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2024-04-12T13:07:42+09:00</updated>
+  <updated>2024-04-15T21:10:30+09:00</updated>
   <author>
     <name>lee seung woo</name>
     <uri>http://localhost:4000/</uri>
@@ -77,6 +77,9 @@ tags: [TAG]     # TAG names should always be lowercase
 
   <summary>소프트웨어 장인정신
 
+기술적 실행 관례
+올바른 일 vs 올바른 실행
+실행 관례와 가치
 비즈니스 가치 중심
 어떻게 하면 팀(또는 관리자, 회사)에 TDD나 페어 프로그래밍같은 것들을 도입하도록 설득할 수 있는가?
 기술적 실행 관례들 그 자체를 직접적으로 팔려고 드는 것은 아무런 의마가 없다.
@@ -88,9 +91,7 @@ tags: [TAG]     # TAG names should always be lowercase
 테스트 주도 개발
 
   사실 TDD는 설계에 대한 실행 관례다.
-  테스트가 코딩 방향을 주도하면 복잡한 코드를 작성하는 것 자체가 어려워진다.
-    
-      정확히 요구사항만큼만 만족...</summary>
+  테스트가 코딩 방향을 주도하면 복잡한 코드를 작성하는 것 ...</summary>
 
   </entry>
 
