@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Xonic의 블로그</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2024-04-18T00:38:53+09:00</updated>
+  <updated>2024-04-18T00:40:46+09:00</updated>
   <author>
     <name>lee seung woo</name>
     <uri>http://localhost:4000/</uri>
@@ -61,7 +61,7 @@ tags: [TAG]     # TAG names should always be lowercase
     <link href="http://localhost:4000/posts/software-professional/" rel="alternate" type="text/html" title="소프트웨어 장인 정신" />
     <published>2024-04-05T00:00:00+09:00</published>
   
-    <updated>2024-04-15T21:52:28+09:00</updated>
+    <updated>2024-04-18T00:39:01+09:00</updated>
   
     <id>http://localhost:4000/posts/software-professional/</id>
     <content src="http://localhost:4000/posts/software-professional/" />
@@ -76,6 +76,9 @@ tags: [TAG]     # TAG names should always be lowercase
   
 
   <summary>소프트웨어 장인정신
+
+  읽은 책:
+
 
 소프트웨어 장인정신
 주관적인 정의
@@ -92,7 +95,7 @@ tags: [TAG]     # TAG names should always be lowercase
 이 부분이 소프트웨어 장인정신에서 가장 중요한 내용이다.
 
 정의 이상의 의미
-소프트웨어 장인정신은 어떤 이념이나 마음가짐에 더 가깝다고 생각한다. 자신이 하는 일에 주인의식을 가지고 프로페셔널하게 행동하고, 고객이 원하는 것이 무엇이든 달성할 수 있...</summary>
+소프트웨어 장인정신은 어떤 이념이나 마음가짐에 더 가깝다고 생각한다. 자신이 하는 일에 주인의식을 가지고 프로페셔널하게 행동하고, 고객이 원하는 것이 무엇...</summary>
 
   </entry>
 
