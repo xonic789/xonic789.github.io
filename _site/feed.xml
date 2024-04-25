@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Xonic의 블로그</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2024-04-18T00:40:46+09:00</updated>
+  <updated>2024-04-25T13:30:05+09:00</updated>
   <author>
     <name>lee seung woo</name>
     <uri>http://localhost:4000/</uri>
@@ -20,38 +20,36 @@
 
   
   <entry>
-    <title>jekyll chirpy theme 사용법</title>
-    <link href="http://localhost:4000/posts/how-to-write-a-new-post/" rel="alternate" type="text/html" title="jekyll chirpy theme 사용법" />
-    <published>2024-04-10T00:00:00+09:00</published>
+    <title>대규모 시스템 설계 기초</title>
+    <link href="http://localhost:4000/posts/%EB%8C%80%EA%B7%9C%EB%AA%A8-%EC%8B%9C%EC%8A%A4%ED%85%9C-%EC%84%A4%EA%B3%84-%EA%B8%B0%EC%B4%88/" rel="alternate" type="text/html" title="대규모 시스템 설계 기초" />
+    <published>2024-04-19T00:00:00+09:00</published>
   
-    <updated>2024-04-10T23:43:09+09:00</updated>
+    <updated>2024-04-19T00:00:00+09:00</updated>
   
-    <id>http://localhost:4000/posts/how-to-write-a-new-post/</id>
-    <content src="http://localhost:4000/posts/how-to-write-a-new-post/" />
+    <id>http://localhost:4000/posts/%EB%8C%80%EA%B7%9C%EB%AA%A8-%EC%8B%9C%EC%8A%A4%ED%85%9C-%EC%84%A4%EA%B3%84-%EA%B8%B0%EC%B4%88/</id>
+    <content src="http://localhost:4000/posts/%EB%8C%80%EA%B7%9C%EB%AA%A8-%EC%8B%9C%EC%8A%A4%ED%85%9C-%EC%84%A4%EA%B3%84-%EA%B8%B0%EC%B4%88/" />
     <author>
       <name>lee seung woo</name>
     </author>
 
   
     
-    <category term="깃허브블로그" />
+    <category term="책읽기" />
     
   
 
-  <summary>이름 지정과 경로
-새로운 파일의 이름은 YYYY-MM-DD-TITLE.EXTENSION 형식으로 작성하고, _posts 디렉토리에 위치해야합니다.
-파일의 EXTENSION은 .md 또는 .markdown이어야합니다.
-파일을 생성하기 위해서 시간을 아끼려면 Jekyll-Compose 를 사용할 수 있습니다.
+  <summary>대규모 시스템 설계 기초
+내가 어느정도 알고 있는지 점검하기.
+대개 웹 애플리케이션은 클라이언트 서버 패턴이다.
+옛날에는 거의 단일 서버(PHP, JSP, etc)에서 클라이언트 / 서버 애플리케이션을 실행했다.
+하지만 근래에는 사용자 경험을 향상시키기 위해서 CSR(Client Side Rendering)이 나왔고, 그 다음엔 CSR 문제를 해결하기 위해 SSR(Server Side Rendering)이 나왔다.
+SSR은 NextJS가 나오면서 옛날과는 다르게 렌더링만 담당하는 서버를 두고, HTML을 렌더링하기 위해 API 서버를 두는 방식으로 발전하였다.
+그러므로 프론트엔드 개발자도, 서버 개발자도 지속적으로 인프라 레벨을 공부해야한다.
 
-서문 작성
-파일의 맨 위에는 YAML Front Matter가 있어야합니다. 이것은 파일의 메타데이터를 정의하는데 사용됩니다.
----
-title: TITLE
-date: YYYY-MM-DD HH:MM:SS +/-TTTT
-categories: [TOP_CATEGORIE, SUB_CATEGORIE]
-tags: [TAG]     # TAG names should always be lowercase
----
-...</summary>
+
+  단일 웹서비스 서버 구조
+    
+      서버에서...</summary>
 
   </entry>
 
@@ -61,7 +59,7 @@ tags: [TAG]     # TAG names should always be lowercase
     <link href="http://localhost:4000/posts/software-professional/" rel="alternate" type="text/html" title="소프트웨어 장인 정신" />
     <published>2024-04-05T00:00:00+09:00</published>
   
-    <updated>2024-04-18T00:39:01+09:00</updated>
+    <updated>2024-04-18T00:41:28+09:00</updated>
   
     <id>http://localhost:4000/posts/software-professional/</id>
     <content src="http://localhost:4000/posts/software-professional/" />
@@ -77,7 +75,7 @@ tags: [TAG]     # TAG names should always be lowercase
 
   <summary>소프트웨어 장인정신
 
-  읽은 책:
+  읽은 책: 소프트웨어 장인
 
 
 소프트웨어 장인정신
@@ -95,7 +93,7 @@ tags: [TAG]     # TAG names should always be lowercase
 이 부분이 소프트웨어 장인정신에서 가장 중요한 내용이다.
 
 정의 이상의 의미
-소프트웨어 장인정신은 어떤 이념이나 마음가짐에 더 가깝다고 생각한다. 자신이 하는 일에 주인의식을 가지고 프로페셔널하게 행동하고, 고객이 원하는 것이 무엇...</summary>
+소프트웨어 장인정신은 어떤 이념이나 마음가짐에 더 가깝다고 생각한다. 자신이 하는 일에 주인의식을 가지고 프로페셔널하게 행동하고, 고객이 ...</summary>
 
   </entry>
 

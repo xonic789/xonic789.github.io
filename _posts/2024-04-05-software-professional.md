@@ -2,7 +2,7 @@
 title: 소프트웨어 장인 정신
 date: 2024-04-05 11::00 +0900
 categories: [소프트웨어 프로페셔널]
-tags: [소프트웨어, software, professional]    
+tags: [소프트웨어, software, professional, 책읽기]    
 pin: true
 ---
 
