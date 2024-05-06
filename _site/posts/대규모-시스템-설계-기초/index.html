@@ -30,24 +30,24 @@
 
   <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.3.3" />
-<meta property="og:title" content="토이프로젝트 회고" />
+<meta property="og:title" content="대규모 시스템 설계 기초 - 사용자 수에 따른 규모 확장성" />
 <meta property="og:locale" content="ko" />
-<meta name="description" content="1 2 docker, WSL2, linux OS, Cloud Server(NCP), nginx, Spring boot, JPA, Spring data JPA, QueryDSL, AWS S3 https://okky.kr 에 토이프로젝트 구인글을 올렸고, 뜻대로 프론트개발자 2명, 서버개발자 1명을 모집하여" />
-<meta property="og:description" content="1 2 docker, WSL2, linux OS, Cloud Server(NCP), nginx, Spring boot, JPA, Spring data JPA, QueryDSL, AWS S3 https://okky.kr 에 토이프로젝트 구인글을 올렸고, 뜻대로 프론트개발자 2명, 서버개발자 1명을 모집하여" />
-<link rel="canonical" href="http://localhost:4000/posts/%ED%86%A0%EC%9D%B4%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%ED%9A%8C%EA%B3%A0/" />
-<meta property="og:url" content="http://localhost:4000/posts/%ED%86%A0%EC%9D%B4%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%ED%9A%8C%EA%B3%A0/" />
+<meta name="description" content="대규모 시스템 설계 기초 내가 어느정도 알고 있는지 점검하기. 대개 웹 애플리케이션은 클라이언트 서버 패턴이다. 옛날에는 거의 단일 서버(PHP, JSP, etc)에서 클라이언트 / 서버 애플리케이션을 실행했다. 하지만 근래에는 사용자 경험을 향상시키기 위해서 CSR(Client Side Rendering)이 나왔고, 그 다음엔 CSR 문제를 해결하기 위해 SSR(Server Side Rendering)이 나왔다. SSR은 NextJS가 나오면서 옛날과는 다르게 렌더링만 담당하는 서버를 두고, HTML을 렌더링하기 위해 API 서버를 두는 방식으로 발전하였다. 그러므로 프론트엔드 개발자도, 서버 개발자도 지속적으로 인프라 레벨을 공부해야한다." />
+<meta property="og:description" content="대규모 시스템 설계 기초 내가 어느정도 알고 있는지 점검하기. 대개 웹 애플리케이션은 클라이언트 서버 패턴이다. 옛날에는 거의 단일 서버(PHP, JSP, etc)에서 클라이언트 / 서버 애플리케이션을 실행했다. 하지만 근래에는 사용자 경험을 향상시키기 위해서 CSR(Client Side Rendering)이 나왔고, 그 다음엔 CSR 문제를 해결하기 위해 SSR(Server Side Rendering)이 나왔다. SSR은 NextJS가 나오면서 옛날과는 다르게 렌더링만 담당하는 서버를 두고, HTML을 렌더링하기 위해 API 서버를 두는 방식으로 발전하였다. 그러므로 프론트엔드 개발자도, 서버 개발자도 지속적으로 인프라 레벨을 공부해야한다." />
+<link rel="canonical" href="http://localhost:4000/posts/%EB%8C%80%EA%B7%9C%EB%AA%A8-%EC%8B%9C%EC%8A%A4%ED%85%9C-%EC%84%A4%EA%B3%84-%EA%B8%B0%EC%B4%88/" />
+<meta property="og:url" content="http://localhost:4000/posts/%EB%8C%80%EA%B7%9C%EB%AA%A8-%EC%8B%9C%EC%8A%A4%ED%85%9C-%EC%84%A4%EA%B3%84-%EA%B8%B0%EC%B4%88/" />
 <meta property="og:site_name" content="Xonic의 블로그" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2021-06-16T00:00:00+09:00" />
+<meta property="article:published_time" content="2024-04-19T00:00:00+09:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="토이프로젝트 회고" />
+<meta property="twitter:title" content="대규모 시스템 설계 기초 - 사용자 수에 따른 규모 확장성" />
 <meta name="google-site-verification" content="txdTnedMbFhWIC4nuKM-3CmxWCZ8xmENPhJc-mDuU3s" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2021-06-16T00:00:00+09:00","datePublished":"2021-06-16T00:00:00+09:00","description":"1 2 docker, WSL2, linux OS, Cloud Server(NCP), nginx, Spring boot, JPA, Spring data JPA, QueryDSL, AWS S3 https://okky.kr 에 토이프로젝트 구인글을 올렸고, 뜻대로 프론트개발자 2명, 서버개발자 1명을 모집하여","headline":"토이프로젝트 회고","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/%ED%86%A0%EC%9D%B4%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%ED%9A%8C%EA%B3%A0/"},"url":"http://localhost:4000/posts/%ED%86%A0%EC%9D%B4%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%ED%9A%8C%EA%B3%A0/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-05-06T21:00:52+09:00","datePublished":"2024-04-19T00:00:00+09:00","description":"대규모 시스템 설계 기초 내가 어느정도 알고 있는지 점검하기. 대개 웹 애플리케이션은 클라이언트 서버 패턴이다. 옛날에는 거의 단일 서버(PHP, JSP, etc)에서 클라이언트 / 서버 애플리케이션을 실행했다. 하지만 근래에는 사용자 경험을 향상시키기 위해서 CSR(Client Side Rendering)이 나왔고, 그 다음엔 CSR 문제를 해결하기 위해 SSR(Server Side Rendering)이 나왔다. SSR은 NextJS가 나오면서 옛날과는 다르게 렌더링만 담당하는 서버를 두고, HTML을 렌더링하기 위해 API 서버를 두는 방식으로 발전하였다. 그러므로 프론트엔드 개발자도, 서버 개발자도 지속적으로 인프라 레벨을 공부해야한다.","headline":"대규모 시스템 설계 기초 - 사용자 수에 따른 규모 확장성","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/%EB%8C%80%EA%B7%9C%EB%AA%A8-%EC%8B%9C%EC%8A%A4%ED%85%9C-%EC%84%A4%EA%B3%84-%EA%B8%B0%EC%B4%88/"},"url":"http://localhost:4000/posts/%EB%8C%80%EA%B7%9C%EB%AA%A8-%EC%8B%9C%EC%8A%A4%ED%85%9C-%EC%84%A4%EA%B3%84-%EA%B8%B0%EC%B4%88/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
-  <title>토이프로젝트 회고 | Xonic의 블로그
+  <title>대규모 시스템 설계 기초 - 사용자 수에 따른 규모 확장성 | Xonic의 블로그
   </title>
 
   <!--
@@ -463,7 +463,7 @@
         
           
             
-              <span>토이프로젝트 회고</span>
+              <span>대규모 시스템 설계 기초 - 사용자 수에 따른 규모 확장성</span>
             
 
           
@@ -546,6 +546,64 @@
   
 
   
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
+  
+
+  
+  
+
+  
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
+  
 
   
   
@@ -613,6 +671,39 @@
 
       
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
 
     
   
@@ -639,13 +730,41 @@
 
       
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
 
     
-  
-
-  
-  
-
   
 
 
@@ -658,7 +777,7 @@
 
 <article class="px-1">
   <header>
-    <h1 data-toc-skip>토이프로젝트 회고</h1>
+    <h1 data-toc-skip>대규모 시스템 설계 기초 - 사용자 수에 따른 규모 확장성</h1>
     
 
     <div class="post-meta text-muted">
@@ -675,18 +794,41 @@
 
 <time
   
-  data-ts="1623769200"
+  data-ts="1713452400"
   data-df="ll"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
   
 >
-  Jun 16, 2021
+  Apr 19, 2024
 </time>
 
       </span>
 
       <!-- lastmod date -->
+      
+        <span>
+          Updated
+          <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1714996852"
+  data-df="ll"
+  
+    data-bs-toggle="tooltip" data-bs-placement="bottom"
+  
+>
+  May  6, 2024
+</time>
+
+        </span>
       
 
       
@@ -730,9 +872,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1443 words"
+  title="2592 words"
 >
-  <em>8 min</em> read</span>
+  <em>14 min</em> read</span>
 
         </div>
       </div>
@@ -740,152 +882,158 @@
   </header>
 
   <div class="content">
-    <div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-</pre></td><td class="rouge-code"><pre>docker, WSL2, linux OS, Cloud Server(NCP), nginx, Spring boot, JPA,
-Spring data JPA, QueryDSL, AWS S3
-</pre></td></tr></tbody></table></code></div></div>
-<p>https://okky.kr 에 토이프로젝트 구인글을 올렸고, 뜻대로 프론트개발자 2명, 서버개발자 1명을 모집하여</p>
+    <h1 id="대규모-시스템-설계-기초">대규모 시스템 설계 기초</h1>
+<h3 id="내가-어느정도-알고-있는지-점검하기"><span class="me-2">내가 어느정도 알고 있는지 점검하기.<br /></span><a href="#내가-어느정도-알고-있는지-점검하기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<p>대개 웹 애플리케이션은 클라이언트 서버 패턴이다.<br />
+옛날에는 거의 단일 서버(PHP, JSP, etc)에서 클라이언트 / 서버 애플리케이션을 실행했다.<br />
+하지만 근래에는 사용자 경험을 향상시키기 위해서 CSR(Client Side Rendering)이 나왔고, 그 다음엔 CSR 문제를 해결하기 위해 SSR(Server Side Rendering)이 나왔다.<br />
+SSR은 NextJS가 나오면서 옛날과는 다르게 렌더링만 담당하는 서버를 두고, HTML을 렌더링하기 위해 API 서버를 두는 방식으로 발전하였다.<br />
+그러므로 프론트엔드 개발자도, 서버 개발자도 지속적으로 인프라 레벨을 공부해야한다.<br /></p>
 
-<p>총 구성인원은 프론트개발자 2명, 서버개발자 본인포함 2명, 웹 디자이너까지 5명이었다.</p>
+<ol>
+  <li>단일 웹서비스 서버 구조
+    <ul>
+      <li>서버에서 모든 것을 처리한다.</li>
+      <li>웹 애플리케이션 서버, 데이터베이스 서버, 캐시 서버 등을 하나의 서버에서 처리한다.</li>
+      <li>병목 지점 발생시 스케일 업이라는 하드웨어 성능을 높이는 방법밖에 없다. - SPOF(Single Point of Failure)가 발생할 수 있다.</li>
+    </ul>
+  </li>
+  <li>웹 서버 + 데이터베이스 서버 구조
+    <ul>
+      <li>웹 서버와 데이터베이스 서버를 분리한다.</li>
+      <li>이렇게 되면 스케일 아웃(서버 병렬 확장)이 가능하다.</li>
+      <li>LB, ALB 가 필요해진다.</li>
+      <li>RDBMS를 사용하면 자체적으로 Master-Slave 구조를 지원한다.</li>
+    </ul>
+  </li>
+</ol>
 
-<p>프로젝트 리딩이 이토록 조원 컨트롤이 안될줄은 몰랐다.
-게다가 접점이 있는 사람들이 아니었다보니 더욱 힘들었던 것 같다.</p>
+<h2 id="책-내용-정리"><span class="me-2">책 내용 정리</span><a href="#책-내용-정리" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h3 id="수직적-규모확장-vs-수평적-규모-확장"><span class="me-2">수직적 규모확장 vs 수평적 규모 확장</span><a href="#수직적-규모확장-vs-수평적-규모-확장" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<p>스케일 업: 단순 하드웨어 성능을 높이는 방법
+스케일 아웃: 서버를 병렬로 늘리는 방법</p>
 
-<h3 id="기획단계"><span class="me-2">기획단계</span><a href="#기획단계" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<p>수직적 규모 확장에는 한계가 있다. 한 대의 서버에 CPU나 메모리를 무한대로 증설할 방법은 없다.
+수직적 규모 확장법은 장애에 대한 자동복구(failover) 방안이나 다중화(re-dundancy) 방안이 없다. 서버에 장애가 발생하면 웹사이트/앱은 완전히 중단된다.</p>
 
-<p>기획단계에선 조원들의 여러 의견과 아이디어를 조합하여 최종적으로 중고책거래 웹 어플리케이션이 뽑혔다.
-요구사항 등을 적절히 분석하지 못했는지, 기획단계에선 부족한점이 많았다고 생각한다.
-협업툴의 중요성을 실감하게 된 계기가 되지 않았나 싶다. 노션 무료버전은 너무나 스토리지가 작았다.</p>
-
-<h3 id="설계단계"><span class="me-2">설계단계</span><a href="#설계단계" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
-<p>프로젝트 기간이 충분하다고 생각하지 않았는데도 불구하고 많은 기능을 구현하려 했다.
-돌이켜보면 기능을 줄이고, 기능을 구현하는데 집중했어야 했는데, 그렇지 못했다.</p>
-
-<h3 id="기술스택"><span class="me-2">기술스택</span><a href="#기술스택" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
-<p>FE 언어는 typescript를 적용해보고 싶다 하여 승인하였다.
-처음 개발에 적용해봐서 그런지 프론트엔트 개발 속도가 나질 않았다.
-BE 언어는 java 11버전을 사용하였으며, 람다와 스트림을 사용해보려 노력해보았다.</p>
-
-<h3 id="자잘한-얘기"><span class="me-2">자잘한 얘기</span><a href="#자잘한-얘기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
-<p>국비지원학원 프로젝트 이후 다시 한번 깨달은 점은, 토이프로젝트에서 책임감이 결여된 조원과의 커뮤니케이션은 상당히 어렵다는 것이었다.
-그래서 나는 최대한 많이 조원들과 얘기 나누고, 시간을 같이 보내려 노력했었다.
-클라우드 서버를 이용해서 배포를 처음 해보았는데, 배포하며 리눅스, 정적웹서버(프록시서버), ssl(https) 등을 적용하며 서버 관련하여 많이 깨달았다.
-docker로 centOS 이미지를 조원들에게 배포하였는데, 클라우드 서버 환경과 동일하게 구성하며 개발 환경을 조성하였다.
-도커를 사용해보지 않았던 조원들에게 사용법을 공유하고 서버 환경등을 설명하느라 시간을 많이 잡아먹었다.
-리눅스 CLI에 조금은 익숙해져 너무 좋았다.</p>
-
-<p>무중단 배포, jenkins등을 공부해보고 싶은 계기가 되었다.
-일일히 빌드된 파일을 서버에 전송하였는데, 상당히 번거로운 일이었다.
-여기서 구글드라이브를 사용하였고, gdown이라는 라이브러리를 사용하였다.</p>
-
-<p>처음 DB 설계 후 JPA 설계를 하였고, 연관관계 중 <code class="language-plaintext highlighter-rouge">@ManyToOne</code> 등의 <code class="language-plaintext highlighter-rouge">default FetchType</code>은 <code class="language-plaintext highlighter-rouge">Eager</code>이었으므로, 원치않는 쿼리가 자꾸 나가 모든 전략을 <code class="language-plaintext highlighter-rouge">LAZY</code>로 설정하여 작업 하였다.
-스스로 <strong>N + 1 쿼리를 짜지 않도록 유의</strong>하여 개발하였다.
-알라딘 api를 적용하여 책 카테고리 등을 받아왔는데, 프록시서버 구성으로 cors 문제는 발생하지 않도록 설계하였다.
-게시물 필터링 적용이 필요하여, jpql 로 개발하였는데, 개발하다 querydsl을 알게되어 querydsl 사용하여 동적쿼리를 구성하였다.</p>
-
-<div class="language-java highlighter-rouge"><div class="code-header">
-        <span data-label-text="Java"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-</pre></td><td class="rouge-code"><pre><span class="n">select</span><span class="o">(</span><span class="k">new</span> <span class="nc">QArticleDTO</span><span class="o">(</span>
-                    <span class="n">articleDAO</span><span class="o">.</span><span class="na">article_id</span><span class="o">,</span>
-                    <span class="n">articleDAO</span><span class="o">.</span><span class="na">countDAO</span><span class="o">,</span>
-                    <span class="n">articleDAO</span><span class="o">.</span><span class="na">title</span><span class="o">,</span>
-                    <span class="n">articleDAO</span><span class="o">.</span><span class="na">tprice</span><span class="o">,</span>
-                    <span class="n">articleDAO</span><span class="o">.</span><span class="na">progress</span><span class="o">,</span>
-                    <span class="n">articleDAO</span><span class="o">.</span><span class="na">category</span><span class="o">,</span>
-                    <span class="n">articleDAO</span><span class="o">.</span><span class="na">member</span><span class="o">.</span><span class="na">nickname</span><span class="o">,</span>
-                    <span class="n">articleDAO</span><span class="o">.</span><span class="na">write_date</span><span class="o">,</span>
-                    <span class="n">articleDAO</span><span class="o">.</span><span class="na">imageInfo</span><span class="o">.</span><span class="na">image1</span><span class="o">))</span>
-            <span class="o">.</span><span class="na">from</span><span class="o">(</span><span class="n">articleDAO</span><span class="o">)</span>
-            <span class="o">.</span><span class="na">join</span><span class="o">(</span><span class="n">articleDAO</span><span class="o">.</span><span class="na">member</span><span class="o">,</span> <span class="n">memberDAO</span><span class="o">)</span>
-            <span class="o">.</span><span class="na">join</span><span class="o">(</span><span class="n">articleDAO</span><span class="o">.</span><span class="na">countDAO</span><span class="o">,</span> <span class="n">countDAO</span><span class="o">)</span>
-            <span class="o">.</span><span class="na">join</span><span class="o">(</span><span class="n">articleDAO</span><span class="o">.</span><span class="na">category</span><span class="o">,</span> <span class="n">book_CategoryDAO</span><span class="o">)</span>
-            <span class="o">.</span><span class="na">join</span><span class="o">(</span><span class="n">articleDAO</span><span class="o">.</span><span class="na">imageInfo</span><span class="o">,</span> <span class="n">image_infoDAO</span><span class="o">)</span>
-            <span class="o">.</span><span class="na">where</span><span class="o">(</span>
-                    <span class="n">articleLatGoe</span><span class="o">(</span><span class="n">member</span><span class="o">),</span>
-                    <span class="n">articleLatLoe</span><span class="o">(</span><span class="n">member</span><span class="o">),</span>
-                    <span class="n">articleLngGoe</span><span class="o">(</span><span class="n">member</span><span class="o">),</span>
-                    <span class="n">articleLngLoe</span><span class="o">(</span><span class="n">member</span><span class="o">),</span>
-                    <span class="n">titleLike</span><span class="o">(</span><span class="n">articleSearchCondition</span><span class="o">.</span><span class="na">getTitle</span><span class="o">()),</span>
-                    <span class="n">articleIdLt</span><span class="o">(</span><span class="n">articleSearchCondition</span><span class="o">.</span><span class="na">getLastId</span><span class="o">()),</span>
-                    <span class="n">divisionEq</span><span class="o">(</span><span class="n">division</span><span class="o">),</span>
-                    <span class="n">articleDAO</span><span class="o">.</span><span class="na">market</span><span class="o">.</span><span class="na">isNull</span><span class="o">(),</span>
-                    <span class="n">articleDAO</span><span class="o">.</span><span class="na">category</span><span class="o">.</span><span class="na">cid</span><span class="o">.</span><span class="na">in</span><span class="o">(</span>
-                            <span class="nc">JPAExpressions</span>
-                                    <span class="o">.</span><span class="na">select</span><span class="o">(</span><span class="n">book_CategoryDAO</span><span class="o">.</span><span class="na">cid</span><span class="o">)</span>
-                                    <span class="o">.</span><span class="na">from</span><span class="o">(</span><span class="n">book_CategoryDAO</span><span class="o">)</span>
-                                    <span class="o">.</span><span class="na">where</span><span class="o">(</span>
-                                            <span class="n">one_depthEq</span><span class="o">(</span><span class="n">categoryList</span><span class="o">[</span><span class="mi">0</span><span class="o">]),</span>
-                                            <span class="n">two_depthEq</span><span class="o">(</span><span class="n">categoryList</span><span class="o">[</span><span class="mi">1</span><span class="o">]),</span>
-                                            <span class="n">three_depthEq</span><span class="o">(</span><span class="n">categoryList</span><span class="o">[</span><span class="mi">2</span><span class="o">]),</span>
-                                            <span class="n">four_depthEq</span><span class="o">(</span><span class="n">categoryList</span><span class="o">[</span><span class="mi">3</span><span class="o">]),</span>
-                                            <span class="n">five_depthEq</span><span class="o">(</span><span class="n">categoryList</span><span class="o">[</span><span class="mi">4</span><span class="o">]))),</span>
-                    <span class="n">articleDAO</span><span class="o">.</span><span class="na">progress</span><span class="o">.</span><span class="na">eq</span><span class="o">(</span><span class="nc">Progress</span><span class="o">.</span><span class="na">POSTING</span><span class="o">).</span><span class="na">or</span><span class="o">(</span><span class="n">articleDAO</span><span class="o">.</span><span class="na">progress</span><span class="o">.</span><span class="na">eq</span><span class="o">(</span><span class="nc">Progress</span><span class="o">.</span><span class="na">TRADING</span><span class="o">))</span>
-            <span class="o">)</span>
-            <span class="o">.</span><span class="na">limit</span><span class="o">(</span><span class="mi">10</span><span class="o">)</span>
-            <span class="o">.</span><span class="na">orderBy</span><span class="o">(</span><span class="n">articleDAO</span><span class="o">.</span><span class="na">article_id</span><span class="o">.</span><span class="na">desc</span><span class="o">())</span>
-            <span class="o">.</span><span class="na">fetch</span><span class="o">();</span> 
-</pre></td></tr></tbody></table></code></div></div>
-<p>=&gt; 이 쿼리는 문제가 있는데, 페이징 처리시에 모든 데이터를 가져와서 메모리에 올리고, 그 후에 애플리케이션 레벨에서 페이징 처리를 하게 된다. 이는 성능에 좋지 않다.
-해결하기 위해선, Join을 하지 않고, 가져오려는 데이터만 가져와서 페이징 처리를 애플리케이션 레벨에서 하지 않고 DBMS 레벨에서 처리하도록 하고, 필요한 데이터들의 ID를 이용해서 다시 한번 쿼리를 날려서 데이터를 가져오는 방법이 있다.</p>
-
+<p>로드밸런서</p>
 <ul>
-  <li><a href="http://www.querydsl.com/">http://www.querydsl.com/</a>를 참조하여 개발하였다.</li>
+  <li>로드밸런서는 서버에 들어오는 트래픽을 분산시켜주는 장치이다.</li>
+  <li>사용자는 로드밸런서로 접근해(public IP) 서버로 접근한다.</li>
+  <li>서버는 private IP를 사용한다. 따라서 서버는 외부에서 직접 접근할 수 없다.</li>
 </ul>
 
-<h3 id="토이프로젝트가-끝난-후-결심"><span class="me-2">토이프로젝트가 끝난 후 결심</span><a href="#토이프로젝트가-끝난-후-결심" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
-
+<p>데이터베이스 다중화</p>
 <ul>
-  <li>gradle build tool에 대해서도 공부할 예정이다.</li>
-  <li>특히 기초가 부족하기 때문에 cs와 알고리즘, 자료구조 등을 지속적으로 공부할 예정이다.</li>
+  <li>Master, Slave 구조를 대부분의 RDBMS가 지원한다. 데이터 원본은 주 서버에, 사본은 부 서버에 저장하는 방식이다.</li>
+  <li>쓰기 연산은 Master에서만 지원한다. 부 데이터베이스는 주 데이터베이스로부터 그 사본을 전달받으며, 읽기연산만을 지원한다.</li>
 </ul>
 
-<h4 id="여러모로-우리에게-벅찬-프로젝트"><span class="me-2">여러모로 우리에게 벅찬 프로젝트</span><a href="#여러모로-우리에게-벅찬-프로젝트" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<p>웹 계층과 데이터 계층에 대한 부분은 위의 글을 참조.</p>
 
-<p>채팅까지 구현하고 싶었으나,(백엔드 개발은 거의 완료된 상태) 프로젝트 조원의 탈주로 인해 프로젝트를 연장은 하되, 일단락 짓기로 마음을 먹은 상태이다.</p>
+<p>아래는 응답시간(la-tency)을 개선해 볼 순서다.
+응답 시간은 캐시를 붙이고 정적 콘텐츠를 콘텐츠 전송 네트워크(Content Delivery Network, CDN)으로 옮기면 개선.</p>
 
-<p>협업툴과 일정관리가 정말 중요하다는 생각이 들었고, 똑같은 실수를 반복하지 않을 것이라 굳게 다짐하였다.</p>
+<h4 id="캐시"><span class="me-2">캐시</span><a href="#캐시" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<p>캐시는 값비싼 연산 결과 또는 자주 참조되는 데이터를 메모리 안에 두고, 다음에 같은 데이터를 요청할 때 빠르게 응답할 수 있도록 하는 기술이다.</p>
+
+<h5 id="캐시-계층"><span class="me-2">캐시 계층</span><a href="#캐시-계층" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<p>캐시 계층(cache tier)은 데이터가 잠시 보관되는 곳으로 데이터베이스보다 훨씬 빠르다.</p>
+
+<h5 id="캐시-사용시-유의할-점"><span class="me-2">캐시 사용시 유의할 점</span><a href="#캐시-사용시-유의할-점" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<ul>
+  <li>데이터 갱신은 자주 일어나지 않지만, 참조는 자주 일어나는 데이터에 캐시를 건다.</li>
+  <li>영속적으로 보관할 데이터를 캐시에 넣지 말자.</li>
+  <li>캐시 만료 정책을 설정하는 건 좋은 습관이다.</li>
+  <li>일관성은 어떻게 유지되는가? 저장소의 원본을 갱신하는 연산과 캐시를 갱신하는 연산이 단일 트랜잭션으로 처리되지 않는 경우 이 일관성은 깨질 수 있다.
+    <ul>
+      <li>이에 관련하여 Fackbook 논문 (Scaling Memcache at Facebook)을 참조하자.</li>
+    </ul>
+  </li>
+  <li>장애에는 어떻게 대처할 것인가? 캐시 서버를 한 대만 두는 경우 해당 서버는 단일 장애 지점(Single Point of Failure, SPOF)이 되어버릴 가능성이 있다.</li>
+  <li>캐시 메모리는 얼마나 크게 잡을 것인가? 캐시 메모리가 너무 작으면 액세스 패턴에 따라서는 데이터가 너무 자주 캐시에서 밀려나버리므로 캐시의 성능이 떨어진다. 해결할 방법은 캐시 메모리를 과할당 하는 것이다.</li>
+  <li>데이터 방출 정책은 무엇인가? 캐시 데이터 방출 정책 중 LRU(Least Recently Used)가 가장 많이 사용된다. 다른 정책도 있으므로 적절하게 선택해야한다.</li>
+</ul>
+
+<h4 id="cdn"><span class="me-2">CDN</span><a href="#cdn" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<ul>
+  <li>CDN은 콘텐츠 전송 네트워크(Content Delivery Network)의 약자로, 전 세계에 분산된 서버에 콘텐츠를 저장해두고 사용자가 접근할 때 가장 가까운 서버에서 콘텐츠를 제공하는 기술이다.</li>
+  <li>CDN은 콘텐츠를 캐시하는 역할을 한다. 콘텐츠를 캐시하면 웹 서버에 대한 요청이 줄어들어 응답 시간이 단축된다.</li>
+</ul>
+
+<h4 id="무상태-웹-계층"><span class="me-2">무상태 웹 계층</span><a href="#무상태-웹-계층" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<ul>
+  <li>웹 계층을 수평적으로 확장하는 방법을 고민해보자. 이를 위해서는 상태 정보(사용자 세션 데이터와 같은)를 웹 계층에서 제거한다.</li>
+  <li>이렇게 하지 않으면 수평적으로 확장되었을 때 A 서버에 저장되어 있는 상태 정보가 B 서버로 이동되지 않아 사용자가 로그인 상태를 유지하지 못하는 문제가 발생한다.</li>
+</ul>
+
+<h4 id="데이터-센터"><span class="me-2">데이터 센터</span><a href="#데이터-센터" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<ul>
+  <li>가용성을 높이고 전 세계 어디서도 쾌적하게 사용할 수 있도록 하기 위해서 여러 데이터 센터를 지원하는 것이 필수다.</li>
+  <li>사용자는 장애가 없는 상황에서 가장 가까운 데이터 센터로 안내되는데, 통상 이 절차를 지리적 라우팅(geographic routing)이라고 한다.</li>
+</ul>
+
+<p>다중 데이터센터 아키텍처를 만들려면 몇 가지 기술적 난제를 해결해야 한다.</p>
+<ul>
+  <li>트래픽 우회: 올바른 데이터 센터로 트래픽을 보내는 효과적인 방법을 찾아야한다. GeoDNS, Anycast IP, BGP Anycast 등이 있다.</li>
+  <li>데이터 동기화</li>
+  <li>테스트와 배포: 여러 데이터 센터를 사용하도록 시스템이 구성된 상황이라면 웹 사이트 또는 애플리케이션을 여러 위치에서 테스트해보는 것이 중요하다.</li>
+</ul>
+
+<p>시스템을 더 큰 규모로 확장하기 위해서는 시스템의 컴포넌트를 분리하여, 각기 독립적으로 확장될 수 있도록 하여야 한다. 메시지 큐는 많은 실제 분산 시스템이 이 문제를 해결하기 위해 채용하고 있는 핵심적 전략 가운데 하나다.</p>
+
+<h4 id="메시지-큐"><span class="me-2">메시지 큐</span><a href="#메시지-큐" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<ul>
+  <li>메시지 큐는 시스템의 컴포넌트 간에 비동기적으로 메시지를 주고받을 수 있게 해주는 시스템이다.</li>
+  <li>메시지 큐는 시스템의 컴포넌트를 독립적으로 만들어준다. 컴포넌트 간의 결합도를 낮추어 시스템을 확장하기 쉽게 만들어준다.</li>
+  <li>보통 메시지 큐는 pub/sub 모델을 사용한다. 이 모델은 메시지를 발행하는 쪽(publisher)과 메시지를 구독하는 쪽(subscriber)으로 나뉜다.</li>
+  <li>발행하는 쪽, 구독하는 쪽이 분리되었기 때문에 독립적으로 확장할 수 있다.</li>
+</ul>
+
+<h4 id="로그-매트릭-그리고-자동화"><span class="me-2">로그, 매트릭 그리고 자동화</span><a href="#로그-매트릭-그리고-자동화" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<ul>
+  <li>로그와 매트릭은 시스템의 건강 상태를 확인하는 데 필수적이다.</li>
+  <li>로그는 시스템의 동작을 추적하고, 매트릭은 시스템의 성능을 측정한다.</li>
+  <li>로그와 매트릭을 수집하고 분석하는 것은 시스템의 성능을 개선하는 데 중요한 역할을 한다.</li>
+</ul>
+
+<h4 id="데이터베이스의-규모-확장"><span class="me-2">데이터베이스의 규모 확장</span><a href="#데이터베이스의-규모-확장" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h5 id="수직적-확장"><span class="me-2">수직적 확장</span><a href="#수직적-확장" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<p>하드웨어 성능을 높이는 이 접근법에는 몇가지 심각한 약점이 있다.</p>
+<ul>
+  <li>하드웨어를 무한으로 증설할 수 없다.</li>
+  <li>SOF로 인한 위험성이 크다</li>
+  <li>비용이 많이 든다. 고성능 서버로 갈수록 가격이 기하급수적으로 올라간다.
+    <h5 id="수평적-확장"><span class="me-2">수평적 확장</span><a href="#수평적-확장" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+    <p>수평적 확장은 서버를 병렬으로 늘리는 방법이다.</p>
+  </li>
+  <li>수평적 확장은 샤딩이라고도 부른다.</li>
+  <li>샤딩은 데이터베이스를 여러 부분으로 나누어 각 부분을 별도의 서버에 저장하는 방식이다.</li>
+</ul>
+
+<p>샤딩 전략을 구현할 때 고려해야 할 가장 중요한 것은 샤딩 키(sharding key)를 어떻게 정하느냐 하는 것.</p>
+<ul>
+  <li>샤딩 키는 파티션 키(partition key)라고도 부른다.</li>
+  <li>데이터가 어떻게 분산될지 정하는 하나 이상의 컬럼으로 구성된다.</li>
+</ul>
+
+<p>샤딩 키를 선택할 때 고려해야 할 사항</p>
+<ul>
+  <li>데이터의 재 샤딩(resharding)</li>
+  <li>유명인사 문제</li>
+  <li>조인과 비정규화</li>
+</ul>
+
+<h4 id="요약"><span class="me-2">요약</span><a href="#요약" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<ul>
+  <li>웹 계층은 무상태 게층으로</li>
+  <li>모든 계층에 다중화 도입</li>
+  <li>가능한 많은 데이터를 캐시할 것</li>
+  <li>정적 콘텐츠는 CDN을 통해 서비스할 것</li>
+  <li>데이터 계층은 샤딩을 통해 그 규모를 확장할 것</li>
+  <li>각 계층은 독립적 서비스로 분할할 것</li>
+  <li>시스템을 지속적으로 모니터링하고, 자동화 도구들을 활용할 것</li>
+</ul>
 
   </div>
 
@@ -895,26 +1043,12 @@ docker로 centOS 이미지를 조원들에게 배포하였는데, 클라우드 �
       <div class="post-meta mb-3">
         <i class="far fa-folder-open fa-fw me-1"></i>
         
-          <a href="/categories/%ED%9A%8C%EA%B3%A0/">회고</a>
+          <a href="/categories/%EC%B1%85%EC%9D%BD%EA%B8%B0/">책읽기</a>,
+          <a href="/categories/%EB%8C%80%EA%B7%9C%EB%AA%A8-%EC%8B%9C%EC%8A%A4%ED%85%9C-%EC%84%A4%EA%B3%84-%EA%B8%B0%EC%B4%88/">대규모 시스템 설계 기초</a>
       </div>
     
 
     <!-- tags -->
-    
-      <div class="post-tags">
-        <i class="fa fa-tags fa-fw me-1"></i>
-        
-          <a
-            href="/tags/retrospect/"
-            class="post-tag no-text-decoration"
-          >retrospect</a>
-        
-          <a
-            href="/tags/%ED%9A%8C%EA%B3%A0/"
-            class="post-tag no-text-decoration"
-          >회고</a>
-        
-      </div>
     
 
     <div
@@ -948,21 +1082,21 @@ docker로 centOS 이미지를 조원들에게 배포하였는데, 클라우드 �
 
       
 
-      <a href="https://twitter.com/intent/tweet?text=%ED%86%A0%EC%9D%B4%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%ED%9A%8C%EA%B3%A0%20-%20Xonic%EC%9D%98%20%EB%B8%94%EB%A1%9C%EA%B7%B8&url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2F%25ED%2586%25A0%25EC%259D%25B4%25ED%2594%2584%25EB%25A1%259C%25EC%25A0%259D%25ED%258A%25B8-%25ED%259A%258C%25EA%25B3%25A0%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
+      <a href="https://twitter.com/intent/tweet?text=%EB%8C%80%EA%B7%9C%EB%AA%A8%20%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EC%84%A4%EA%B3%84%20%EA%B8%B0%EC%B4%88%20-%20%EC%82%AC%EC%9A%A9%EC%9E%90%20%EC%88%98%EC%97%90%20%EB%94%B0%EB%A5%B8%20%EA%B7%9C%EB%AA%A8%20%ED%99%95%EC%9E%A5%EC%84%B1%20-%20Xonic%EC%9D%98%20%EB%B8%94%EB%A1%9C%EA%B7%B8&url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2F%25EB%258C%2580%25EA%25B7%259C%25EB%25AA%25A8-%25EC%258B%259C%25EC%258A%25A4%25ED%2585%259C-%25EC%2584%25A4%25EA%25B3%2584-%25EA%25B8%25B0%25EC%25B4%2588%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
         <i class="fa-fw fa-brands fa-square-x-twitter"></i>
       </a>
     
 
       
 
-      <a href="https://www.facebook.com/sharer/sharer.php?title=%ED%86%A0%EC%9D%B4%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%ED%9A%8C%EA%B3%A0%20-%20Xonic%EC%9D%98%20%EB%B8%94%EB%A1%9C%EA%B7%B8&u=http%3A%2F%2Flocalhost%3A4000%2Fposts%2F%25ED%2586%25A0%25EC%259D%25B4%25ED%2594%2584%25EB%25A1%259C%25EC%25A0%259D%25ED%258A%25B8-%25ED%259A%258C%25EA%25B3%25A0%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
+      <a href="https://www.facebook.com/sharer/sharer.php?title=%EB%8C%80%EA%B7%9C%EB%AA%A8%20%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EC%84%A4%EA%B3%84%20%EA%B8%B0%EC%B4%88%20-%20%EC%82%AC%EC%9A%A9%EC%9E%90%20%EC%88%98%EC%97%90%20%EB%94%B0%EB%A5%B8%20%EA%B7%9C%EB%AA%A8%20%ED%99%95%EC%9E%A5%EC%84%B1%20-%20Xonic%EC%9D%98%20%EB%B8%94%EB%A1%9C%EA%B7%B8&u=http%3A%2F%2Flocalhost%3A4000%2Fposts%2F%25EB%258C%2580%25EA%25B7%259C%25EB%25AA%25A8-%25EC%258B%259C%25EC%258A%25A4%25ED%2585%259C-%25EC%2584%25A4%25EA%25B3%2584-%25EA%25B8%25B0%25EC%25B4%2588%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
         <i class="fa-fw fab fa-facebook-square"></i>
       </a>
     
 
       
 
-      <a href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2F%25ED%2586%25A0%25EC%259D%25B4%25ED%2594%2584%25EB%25A1%259C%25EC%25A0%259D%25ED%258A%25B8-%25ED%259A%258C%25EA%25B3%25A0%2F&text=%ED%86%A0%EC%9D%B4%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%ED%9A%8C%EA%B3%A0%20-%20Xonic%EC%9D%98%20%EB%B8%94%EB%A1%9C%EA%B7%B8" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
+      <a href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2F%25EB%258C%2580%25EA%25B7%259C%25EB%25AA%25A8-%25EC%258B%259C%25EC%258A%25A4%25ED%2585%259C-%25EC%2584%25A4%25EA%25B3%2584-%25EA%25B8%25B0%25EC%25B4%2588%2F&text=%EB%8C%80%EA%B7%9C%EB%AA%A8%20%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EC%84%A4%EA%B3%84%20%EA%B8%B0%EC%B4%88%20-%20%EC%82%AC%EC%9A%A9%EC%9E%90%20%EC%88%98%EC%97%90%20%EB%94%B0%EB%A5%B8%20%EA%B7%9C%EB%AA%A8%20%ED%99%95%EC%9E%A5%EC%84%B1%20-%20Xonic%EC%9D%98%20%EB%B8%94%EB%A1%9C%EA%B7%B8" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
         <i class="fa-fw fab fa-telegram"></i>
       </a>
     
@@ -1334,18 +1468,22 @@ docker로 centOS 이미지를 조원들에게 배포하였는데, 클라우드 �
   
 
   
-    <div class="btn btn-outline-primary disabled" aria-label="Older">
-      <p>-</p>
-    </div>
+    <a
+      href="/posts/how-to-write-a-new-post/"
+      class="btn btn-outline-primary"
+      aria-label="Older"
+    >
+      <p>jekyll chirpy theme 사용법</p>
+    </a>
   
 
   
     <a
-      href="/posts/software-professional/"
+      href="/posts/%EC%8A%A4%ED%83%80%ED%8A%B8%EC%97%85%EC%97%90-%EB%8C%80%ED%95%9C-%EB%82%98%EC%9D%98-%EC%83%9D%EA%B0%81/"
       class="btn btn-outline-primary"
       aria-label="Newer"
     >
-      <p>소프트웨어 장인 정신</p>
+      <p>스타트업에 대한 나의 생각</p>
     </a>
   
 </nav>
