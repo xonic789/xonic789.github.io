@@ -1,0 +1,159 @@
+{
+  "main": {
+    "id": "49c0988e8138d144",
+    "type": "split",
+    "children": [
+      {
+        "id": "cc630a02738926f7",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "8a52de287ce34e2e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "_posts/2023-04-28-스타트업에서의-팀.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "beb555e48795b492",
+    "type": "split",
+    "children": [
+      {
+        "id": "bad2c05eba638b26",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "176fdb7263689b6b",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "f660cacb282a0315",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "bd929faf47be3205",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "3a8564543f9b3790",
+    "type": "split",
+    "children": [
+      {
+        "id": "62331c2458cbc222",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "8413d55d9c5274db",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "_posts/2023-04-28-스타트업에서의-팀.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "9dafeb7410f70372",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "_posts/2023-04-28-스타트업에서의-팀.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "bbb0322a0ae24291",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "bc5bd781ff3424da",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "_posts/2023-04-28-스타트업에서의-팀.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:퀵 스위처 열기": false,
+      "graph:그래프 뷰 열기": false,
+      "canvas:새 캔버스 만들기": false,
+      "daily-notes:오늘의 데일리 노트 열기": false,
+      "templates:템플릿 삽입": false,
+      "command-palette:명령어 팔레트 열기": false
+    }
+  },
+  "active": "8a52de287ce34e2e",
+  "lastOpenFiles": [
+    "_site/posts/스타트업에서의-팀/index.html",
+    "_site/posts/스타트업에서의-팀",
+    "_posts/2024-05-06-스타트업에-대한-나의-생각.md",
+    "_posts/2023-04-28-스타트업에서의-팀.md",
+    "_posts/2024-04-19-대규모-시스템-설계-기초.md",
+    "assets/img/favicons/android-chrome-192x192.png",
+    "_posts/2021-06-16-토이프로젝트 회고.md"
+  ]
+}
