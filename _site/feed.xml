@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Xonic의 블로그</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2024-05-17T11:12:20+09:00</updated>
+  <updated>2024-05-17T14:16:33+09:00</updated>
   <author>
     <name>lee seung woo</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,48 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>H264 표준 코덱과 구현체</title>
+    <link href="http://localhost:4000/posts/H264-%ED%91%9C%EC%A4%80-%EC%BD%94%EB%8D%B1%EA%B3%BC-%EA%B5%AC%ED%98%84%EC%B2%B4/" rel="alternate" type="text/html" title="H264 표준 코덱과 구현체" />
+    <published>2024-05-17T00:00:00+09:00</published>
+  
+    <updated>2024-05-17T00:00:00+09:00</updated>
+  
+    <id>http://localhost:4000/posts/H264-%ED%91%9C%EC%A4%80-%EC%BD%94%EB%8D%B1%EA%B3%BC-%EA%B5%AC%ED%98%84%EC%B2%B4/</id>
+    <content src="http://localhost:4000/posts/H264-%ED%91%9C%EC%A4%80-%EC%BD%94%EB%8D%B1%EA%B3%BC-%EA%B5%AC%ED%98%84%EC%B2%B4/" />
+    <author>
+      <name>lee seung woo</name>
+    </author>
+
+  
+    
+  
+
+  <summary>FMPEG.wasm 라이브러리
+
+
+  장점
+    
+      클라이언트 사이드에서 동작 (클라이언트 리소스를 사용해서 동영상을 인코딩하거나 디코딩)
+      단일 쓰레드와 멀티 쓰레드를 같이 제공하므로 상황에 맞는 것을 선택 가능
+      그 외 장점들이 표현되어 있네요.
+    
+  
+  우선,  ffmpeg의 h264는 내부적으로 **x264를 사용하게 됩니다.*
+  참고로 x264는 videolan 에서 h264 스펙을 구현한 라이브러리를 사용합니다.
+=&amp;amp;gt; 참고 링크: https://superuser.com/questions/1587136/what-is-the-different-of-h264-and-libx264
+
+
+openH264 vs. x264
+
+
+  라이선스:
+    
+      ...</summary>
+
+  </entry>
 
   
   <entry>
@@ -168,40 +210,6 @@ tags: [TAG]     # TAG names should always be lowercase
 
 정의 이상의 의미
 소프트웨어 장인정신은 어떤 이념이나 마음가짐에 더 가깝다고 생각한다. 자신이 하는 일에 주인의식을 가지고 프로페셔널하게 행동하고, 고객이 ...</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>구름 commit 우리가 함께 성장하는 방법(2023-12-20)</title>
-    <link href="http://localhost:4000/posts/%EA%B5%AC%EB%A6%84-commit-%EC%9A%B0%EB%A6%AC%EA%B0%80-%ED%95%A8%EA%BB%98-%EC%84%B1%EC%9E%A5%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95/" rel="alternate" type="text/html" title="구름 commit 우리가 함께 성장하는 방법(2023-12-20)" />
-    <published>2023-12-20T00:00:00+09:00</published>
-  
-    <updated>2023-12-20T00:00:00+09:00</updated>
-  
-    <id>http://localhost:4000/posts/%EA%B5%AC%EB%A6%84-commit-%EC%9A%B0%EB%A6%AC%EA%B0%80-%ED%95%A8%EA%BB%98-%EC%84%B1%EC%9E%A5%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95/</id>
-    <content src="http://localhost:4000/posts/%EA%B5%AC%EB%A6%84-commit-%EC%9A%B0%EB%A6%AC%EA%B0%80-%ED%95%A8%EA%BB%98-%EC%84%B1%EC%9E%A5%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95/" />
-    <author>
-      <name>lee seung woo</name>
-    </author>
-
-  
-    
-    <category term="컨퍼런스" />
-    
-  
-
-  <summary>아래 글은 제가 2023년 12월 20일 구름 commit 프로그램을 참석한 뒤 류석문님의 강의를 토대로 개인적으로 쓴 글입니다.
-
-소프트웨어 개발 경험과 애자일 실천, 그리고 소프트웨어 장인정신
-
-폭포수 모델의 한계와 애자일 개발 방법론
-
-전통적인 폭포수 모델은 논리적으로 완벽해 보이지만, 변동성이 큰 현실을 반영하지 못한다는 단점이 있습니다. 이에 대한 대안으로 등장한 애자일 개발 방법론은 상황에 맞춰 끊임없이 조정하고 점진적으로 구현하는 방식을 제시합니다. 하지만 애자일 방법론 역시 완벽한 해결책은 아닙니다.
-
-애자일 실천의 현실과 문제점
-
-애자일 방법론을 실천하는 과정에서 형식적인 데일리 스탠드업, 회고, 플래닝 등은 실질적인 문제 해결보다는 눈치 보기와 형식적인 절차에 치중하게 만드는 경우가 ...</summary>
 
   </entry>
 
