@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Xonic의 블로그</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2024-05-23T16:49:16+09:00</updated>
+  <updated>2024-05-23T16:55:41+09:00</updated>
   <author>
     <name>lee seung woo</name>
     <uri>http://localhost:4000/</uri>
@@ -20,8 +20,8 @@
 
   
   <entry>
-    <title>개발자라면 꼭 알아야할 Decimal</title>
-    <link href="http://localhost:4000/posts/%EA%B0%9C%EB%B0%9C%EC%9E%90%EB%9D%BC%EB%A9%B4-%EA%BC%AD-%EC%95%8C%EC%95%84%EC%95%BC-%ED%95%A0-Decimal-%EB%8F%88-%EA%B3%84%EC%82%B0,-%EC%A0%9C%EB%8C%80%EB%A1%9C-%ED%95%98%EC%9E%90!/" rel="alternate" type="text/html" title="개발자라면 꼭 알아야할 Decimal" />
+    <title>개발자라면 Decimal과 부동소수점은 알아야지?</title>
+    <link href="http://localhost:4000/posts/%EA%B0%9C%EB%B0%9C%EC%9E%90%EB%9D%BC%EB%A9%B4-%EA%BC%AD-%EC%95%8C%EC%95%84%EC%95%BC-%ED%95%A0-Decimal-%EB%8F%88-%EA%B3%84%EC%82%B0,-%EC%A0%9C%EB%8C%80%EB%A1%9C-%ED%95%98%EC%9E%90!/" rel="alternate" type="text/html" title="개발자라면 Decimal과 부동소수점은 알아야지?" />
     <published>2024-05-23T00:00:00+09:00</published>
   
     <updated>2024-05-23T00:00:00+09:00</updated>
@@ -36,19 +36,18 @@
     
   
 
-  <summary>정확한 금융 계산, Kotlin Decimal 사용 필수! 부동소수점 함정에 주의
+  <summary>부동소수점 함정에 주의
 
-금융 애플리케이션 개발 시, 정확한 계산 로직 구현은 필수 불가결하다. 부동소수점 자료형(Float, Double)은 근사치 계산으로 인해 금융 계산에 적합하지 않다. Kotlin Decimal을 사용하여 이 문제를 해결하고 정확한 계산을 보장해야 한다.
+금융 애플리케이션 개발 시, 정확한 계산 로직 구현은 필수 불가결하다. 부동소수점 자료형(Float, Double)은 근사치 계산으로 인해 금융 계산에 적합하지 않다. Decimal을 사용하여 이 문제를 해결하고 정확한 계산을 보장해야 한다.
 
 부동소수점 함정: IEEE 754 표준의 한계
 
 대부분의 프로그래밍 언어는 부동소수점 표현에 IEEE 754 표준을 따른다. 64비트 double precision은 부호(1비트), 지수(11비트), 가수(52비트)로 구성된다.
 
-예를 들어 0.1을 double precision 부동소수점으로 표현하면 다음과 같다.
+  32비트 single precision은 64비트에 비해 표현 가능한 비트수가 절반이므로 정밀도가 상대적으로 떨어진다.
 
 
-  부호: 0 (양수)
-  지수: 0111111...</summary>
+예를 들어 0.1을 double precision 부동소수점으로 표현하면 다음과 같...</summary>
 
   </entry>
 
