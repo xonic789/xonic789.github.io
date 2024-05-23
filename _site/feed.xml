@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Xonic의 블로그</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2024-05-17T14:32:44+09:00</updated>
+  <updated>2024-05-23T16:49:16+09:00</updated>
   <author>
     <name>lee seung woo</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,40 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>개발자라면 꼭 알아야할 Decimal</title>
+    <link href="http://localhost:4000/posts/%EA%B0%9C%EB%B0%9C%EC%9E%90%EB%9D%BC%EB%A9%B4-%EA%BC%AD-%EC%95%8C%EC%95%84%EC%95%BC-%ED%95%A0-Decimal-%EB%8F%88-%EA%B3%84%EC%82%B0,-%EC%A0%9C%EB%8C%80%EB%A1%9C-%ED%95%98%EC%9E%90!/" rel="alternate" type="text/html" title="개발자라면 꼭 알아야할 Decimal" />
+    <published>2024-05-23T00:00:00+09:00</published>
+  
+    <updated>2024-05-23T00:00:00+09:00</updated>
+  
+    <id>http://localhost:4000/posts/%EA%B0%9C%EB%B0%9C%EC%9E%90%EB%9D%BC%EB%A9%B4-%EA%BC%AD-%EC%95%8C%EC%95%84%EC%95%BC-%ED%95%A0-Decimal-%EB%8F%88-%EA%B3%84%EC%82%B0,-%EC%A0%9C%EB%8C%80%EB%A1%9C-%ED%95%98%EC%9E%90!/</id>
+    <content src="http://localhost:4000/posts/%EA%B0%9C%EB%B0%9C%EC%9E%90%EB%9D%BC%EB%A9%B4-%EA%BC%AD-%EC%95%8C%EC%95%84%EC%95%BC-%ED%95%A0-Decimal-%EB%8F%88-%EA%B3%84%EC%82%B0,-%EC%A0%9C%EB%8C%80%EB%A1%9C-%ED%95%98%EC%9E%90!/" />
+    <author>
+      <name>lee seung woo</name>
+    </author>
+
+  
+    
+  
+
+  <summary>정확한 금융 계산, Kotlin Decimal 사용 필수! 부동소수점 함정에 주의
+
+금융 애플리케이션 개발 시, 정확한 계산 로직 구현은 필수 불가결하다. 부동소수점 자료형(Float, Double)은 근사치 계산으로 인해 금융 계산에 적합하지 않다. Kotlin Decimal을 사용하여 이 문제를 해결하고 정확한 계산을 보장해야 한다.
+
+부동소수점 함정: IEEE 754 표준의 한계
+
+대부분의 프로그래밍 언어는 부동소수점 표현에 IEEE 754 표준을 따른다. 64비트 double precision은 부호(1비트), 지수(11비트), 가수(52비트)로 구성된다.
+
+예를 들어 0.1을 double precision 부동소수점으로 표현하면 다음과 같다.
+
+
+  부호: 0 (양수)
+  지수: 0111111...</summary>
+
+  </entry>
 
   
   <entry>
@@ -166,50 +200,6 @@ categories: [TOP_CATEGORIE, SUB_CATEGORIE]
 tags: [TAG]     # TAG names should always be lowercase
 ---
 ...</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>소프트웨어 장인 정신</title>
-    <link href="http://localhost:4000/posts/software-professional/" rel="alternate" type="text/html" title="소프트웨어 장인 정신" />
-    <published>2024-04-05T00:00:00+09:00</published>
-  
-    <updated>2024-04-25T13:30:26+09:00</updated>
-  
-    <id>http://localhost:4000/posts/software-professional/</id>
-    <content src="http://localhost:4000/posts/software-professional/" />
-    <author>
-      <name>lee seung woo</name>
-    </author>
-
-  
-    
-    <category term="소프트웨어 프로페셔널" />
-    
-  
-
-  <summary>소프트웨어 장인정신
-
-  읽은 책: 소프트웨어 장인
-
-
-소프트웨어 장인정신
-주관적인 정의
-
-  소프트웨어 장인정신은 마스터가 되어가는 긴 여정이다. 소프트웨어 장인 정신은 소프트웨어 개발자가 스스로 선택한 커리어에 책임을 가지고, 지속적으로 새로운 도구와 기술을 익히며 발전하겠다는 마음가짐이다.
-소프트웨어 장인 정신은 책임감, 프로페셔널리즘, 실용주의 그리고 소프트웨어 개발자로서의 자부심을 의미한다.
-
-
-짧은 정의
-
-  소프트웨어 장인정신은 소프트웨어 개발의 프로페셜리즘에 대한 것이다.
-
-
-이 부분이 소프트웨어 장인정신에서 가장 중요한 내용이다.
-
-정의 이상의 의미
-소프트웨어 장인정신은 어떤 이념이나 마음가짐에 더 가깝다고 생각한다. 자신이 하는 일에 주인의식을 가지고 프로페셔널하게 행동하고, 고객이 ...</summary>
 
   </entry>
 
