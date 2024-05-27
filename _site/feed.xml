@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Xonic의 블로그</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2024-05-23T16:55:41+09:00</updated>
+  <updated>2024-05-27T15:11:03+09:00</updated>
   <author>
     <name>lee seung woo</name>
     <uri>http://localhost:4000/</uri>
@@ -20,11 +20,42 @@
 
   
   <entry>
+    <title>HEIC 포맷을 JPG 로 CLI 를 통해서 변경하기</title>
+    <link href="http://localhost:4000/posts/HEIC-%ED%8F%AC%EB%A7%B7%EC%9D%84-JPG-%EB%A1%9C-%EB%B3%80%EA%B2%BD-%ED%95%98%EA%B8%B0/" rel="alternate" type="text/html" title="HEIC 포맷을 JPG 로 CLI 를 통해서 변경하기" />
+    <published>2024-05-27T00:00:00+09:00</published>
+  
+    <updated>2024-05-27T00:00:00+09:00</updated>
+  
+    <id>http://localhost:4000/posts/HEIC-%ED%8F%AC%EB%A7%B7%EC%9D%84-JPG-%EB%A1%9C-%EB%B3%80%EA%B2%BD-%ED%95%98%EA%B8%B0/</id>
+    <content src="http://localhost:4000/posts/HEIC-%ED%8F%AC%EB%A7%B7%EC%9D%84-JPG-%EB%A1%9C-%EB%B3%80%EA%B2%BD-%ED%95%98%EA%B8%B0/" />
+    <author>
+      <name>lee seung woo</name>
+    </author>
+
+  
+    
+  
+
+  <summary>HEIC 포맷을 JPG 로 변경하기
+가끔 아이폰으로 찍은 사진을 맥북에 에어드롭으로 전송하면 HEIC 포맷으로 저장되는 경우가 있다. 이런 경우, HEIC 포맷을 JPG 로 변경하고 싶을 때가 있다. 이때 CLI 를 사용하면 편리하게 변경할 수 있다.
+# HEIC 포맷을 JPG 로 변경
+sips -s format jpeg -s formatOptions best image.heic --out image.jpg
+
+이렇게 하면 image.heic 파일이 image.jpg 로 변경 된다.
+
+HEIC 포맷은?
+HEIC(High Efficiency Image Container)는 고효율 이미지 파일 포맷으로, HEIF(High Efficiency Image Format) 표준을 따른다.
+HEIF는 MPEG(Mov...</summary>
+
+  </entry>
+
+  
+  <entry>
     <title>개발자라면 Decimal과 부동소수점은 알아야지?</title>
     <link href="http://localhost:4000/posts/%EA%B0%9C%EB%B0%9C%EC%9E%90%EB%9D%BC%EB%A9%B4-%EA%BC%AD-%EC%95%8C%EC%95%84%EC%95%BC-%ED%95%A0-Decimal-%EB%8F%88-%EA%B3%84%EC%82%B0,-%EC%A0%9C%EB%8C%80%EB%A1%9C-%ED%95%98%EC%9E%90!/" rel="alternate" type="text/html" title="개발자라면 Decimal과 부동소수점은 알아야지?" />
     <published>2024-05-23T00:00:00+09:00</published>
   
-    <updated>2024-05-23T00:00:00+09:00</updated>
+    <updated>2024-05-23T16:55:57+09:00</updated>
   
     <id>http://localhost:4000/posts/%EA%B0%9C%EB%B0%9C%EC%9E%90%EB%9D%BC%EB%A9%B4-%EA%BC%AD-%EC%95%8C%EC%95%84%EC%95%BC-%ED%95%A0-Decimal-%EB%8F%88-%EA%B3%84%EC%82%B0,-%EC%A0%9C%EB%8C%80%EB%A1%9C-%ED%95%98%EC%9E%90!/</id>
     <content src="http://localhost:4000/posts/%EA%B0%9C%EB%B0%9C%EC%9E%90%EB%9D%BC%EB%A9%B4-%EA%BC%AD-%EC%95%8C%EC%95%84%EC%95%BC-%ED%95%A0-Decimal-%EB%8F%88-%EA%B3%84%EC%82%B0,-%EC%A0%9C%EB%8C%80%EB%A1%9C-%ED%95%98%EC%9E%90!/" />
@@ -162,43 +193,6 @@ SSR은 NextJS가 나오면서 옛날과는 다르게 렌더링만 담당하는 �
   단일 웹서비스 서버 구조
     
       서버에서...</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>jekyll chirpy theme 사용법</title>
-    <link href="http://localhost:4000/posts/how-to-write-a-new-post/" rel="alternate" type="text/html" title="jekyll chirpy theme 사용법" />
-    <published>2024-04-10T00:00:00+09:00</published>
-  
-    <updated>2024-04-10T23:43:09+09:00</updated>
-  
-    <id>http://localhost:4000/posts/how-to-write-a-new-post/</id>
-    <content src="http://localhost:4000/posts/how-to-write-a-new-post/" />
-    <author>
-      <name>lee seung woo</name>
-    </author>
-
-  
-    
-    <category term="깃허브블로그" />
-    
-  
-
-  <summary>이름 지정과 경로
-새로운 파일의 이름은 YYYY-MM-DD-TITLE.EXTENSION 형식으로 작성하고, _posts 디렉토리에 위치해야합니다.
-파일의 EXTENSION은 .md 또는 .markdown이어야합니다.
-파일을 생성하기 위해서 시간을 아끼려면 Jekyll-Compose 를 사용할 수 있습니다.
-
-서문 작성
-파일의 맨 위에는 YAML Front Matter가 있어야합니다. 이것은 파일의 메타데이터를 정의하는데 사용됩니다.
----
-title: TITLE
-date: YYYY-MM-DD HH:MM:SS +/-TTTT
-categories: [TOP_CATEGORIE, SUB_CATEGORIE]
-tags: [TAG]     # TAG names should always be lowercase
----
-...</summary>
 
   </entry>
 

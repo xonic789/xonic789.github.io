@@ -1,6 +1,23 @@
 [
   
   {
+    "title": "HEIC 포맷을 JPG 로 CLI 를 통해서 변경하기",
+    "url": "/posts/HEIC-%ED%8F%AC%EB%A7%B7%EC%9D%84-JPG-%EB%A1%9C-%EB%B3%80%EA%B2%BD-%ED%95%98%EA%B8%B0/",
+    "categories": "",
+    "tags": "CLI, MAC, HEIC, JPG",
+    "date": "2024-05-27 00:00:00 +0900",
+    
+
+
+
+
+
+    
+    "snippet": "HEIC 포맷을 JPG 로 변경하기가끔 아이폰으로 찍은 사진을 맥북에 에어드롭으로 전송하면 HEIC 포맷으로 저장되는 경우가 있다. 이런 경우, HEIC 포맷을 JPG 로 변경하고 싶을 때가 있다. 이때 CLI 를 사용하면 편리하게 변경할 수 있다.# HEIC 포맷을 JPG 로 변경sips -s format jpeg -s formatOptions be...",
+    "content": "HEIC 포맷을 JPG 로 변경하기가끔 아이폰으로 찍은 사진을 맥북에 에어드롭으로 전송하면 HEIC 포맷으로 저장되는 경우가 있다. 이런 경우, HEIC 포맷을 JPG 로 변경하고 싶을 때가 있다. 이때 CLI 를 사용하면 편리하게 변경할 수 있다.# HEIC 포맷을 JPG 로 변경sips -s format jpeg -s formatOptions best image.heic --out image.jpg이렇게 하면 image.heic 파일이 image.jpg 로 변경 된다.HEIC 포맷은?HEIC(High Efficiency Image Container)는 고효율 이미지 파일 포맷으로, HEIF(High Efficiency Image Format) 표준을 따른다.HEIF는 MPEG(Moving Picture Experts Group)에서 개발한 이미지 표준으로, JPEG보다 더 높은 압축률을 제공하여 동일한 품질의 이미지를 더 작은 파일 크기로 저장할 수 있음.HEIC의 주요 특징:  높은 압축률: HEIC는 JPEG보다 최대 50% 더 높은 압축률을 제공하여 저장 공간을 절약.  화질 유지: 압축률이 높음에도 불구하고 JPEG와 동일한 수준의 화질을 유지.  다양한 기능 지원: 투명도, 16비트 색심도, 이미지 시퀀스(움짤과 유사) 등 다양한 기능을 지원.HEIC 이미지 표준:  HEIC는 MPEG-H Part 12(ISO/IEC 23008-12) 표준에 정의되어 있습니다. HEVC(High Efficiency Video Coding) 코덱을 사용하여 이미지를 압축하며, 이는 4K 및 8K 비디오 압축에도 사용되는 코덱이다.JPG(JPEG) 포맷은?JPG(JPEG)는 가장 널리 사용되는 이미지 파일 형식이다.Joint Photographic Experts Group에서 개발했고, 손실 압축 방식을 사용하여 파일 크기를 줄이는 대신 이미지 품질이 약간 저하될 수 있다.JPEG의 주요 특징:  24비트 색상 지원: 1600만 가지 이상의 색상 표현 가능  손실 압축: 파일 크기를 줄이기 위해 이미지 데이터 일부 손실  높은 호환성: 대부분의 기기 및 소프트웨어에서 지원  사진 저장에 적합: 풍부한 색상 표현과 적절한 파일 크기"
+  },
+  
+  {
     "title": "개발자라면 Decimal과 부동소수점은 알아야지?",
     "url": "/posts/%EA%B0%9C%EB%B0%9C%EC%9E%90%EB%9D%BC%EB%A9%B4-%EA%BC%AD-%EC%95%8C%EC%95%84%EC%95%BC-%ED%95%A0-Decimal-%EB%8F%88-%EA%B3%84%EC%82%B0,-%EC%A0%9C%EB%8C%80%EB%A1%9C-%ED%95%98%EC%9E%90!/",
     "categories": "",
