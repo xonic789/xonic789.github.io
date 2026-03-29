@@ -25,6 +25,8 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      RUNNER_TOOL_CACHE: ${{ github.workspace }}/.toolcache
 
     steps:
       - name: Checkout
