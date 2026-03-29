@@ -39,13 +39,14 @@ jobs:
         id: pages
         uses: actions/configure-pages@v4
 
-      - name: Prepare Ruby toolcache on self-hosted runner
-        if: ${{ runner.environment == 'self-hosted' }}
+      - name: Prepare Ruby toolcache when missing
+        if: ${{ runner.os == 'Linux' }}
         env:
           RUBY_VERSION: 3.2.2
-          RUBY_PREFIX: /opt/hostedtoolcache/Ruby/3.2.2/x64
         run: |
           set -euo pipefail
+          TOOLCACHE_ROOT="${RUNNER_TOOL_CACHE:-/opt/hostedtoolcache}"
+          RUBY_PREFIX="${TOOLCACHE_ROOT}/Ruby/${RUBY_VERSION}/x64"
           COMPLETE_FILE="${RUBY_PREFIX}.complete"
           if [ -f "$COMPLETE_FILE" ]; then
             exit 0
