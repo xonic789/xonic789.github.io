@@ -11,6 +11,10 @@ on:
   push:
     branches: ["main"]
 
+  # Publish future-dated posts without manual push (UTC 기준 00:00 = KST 09:00)
+  schedule:
+    - cron: '0 0 * * *'
+
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
     inputs:
@@ -51,6 +55,9 @@ jobs:
           COMPLETE_FILE="${RUBY_PREFIX}.complete"
           if [ -f "$COMPLETE_FILE" ]; then
             echo "Ruby ${RUBY_VERSION} already prepared in toolcache"
+            if command -v sudo >/dev/null 2>&1; then
+              sudo chown -R "$(id -u):$(id -g)" "$RUBY_PREFIX" "$COMPLETE_FILE" || true
+            fi
             exit 0
           fi
 
@@ -61,6 +68,9 @@ jobs:
 
           if [ -f "$COMPLETE_FILE" ]; then
             echo "Ruby ${RUBY_VERSION} became available while waiting lock"
+            if command -v sudo >/dev/null 2>&1; then
+              sudo chown -R "$(id -u):$(id -g)" "$RUBY_PREFIX" "$COMPLETE_FILE" || true
+            fi
             exit 0
           fi
 
@@ -84,6 +94,11 @@ jobs:
           $SUDO mkdir -p "$(dirname "$RUBY_PREFIX")"
           $SUDO ruby-build "$RUBY_VERSION" "$RUBY_PREFIX"
           $SUDO touch "$COMPLETE_FILE"
+
+          # Ensure later steps (ruby/setup-ruby -> gem install bundler) can write without sudo.
+          OWNER_UID="$(id -u)"
+          OWNER_GID="$(id -g)"
+          $SUDO chown -R "$OWNER_UID:$OWNER_GID" "$RUBY_PREFIX" "$COMPLETE_FILE"
 
       - name: Setup Ruby
         uses: ruby/setup-ruby@8575951200e472d5f2d95c625da0c7bec8217c42 # v1.161.0

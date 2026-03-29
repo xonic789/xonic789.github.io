@@ -49,12 +49,18 @@ jobs:
           RUBY_PREFIX="${TOOLCACHE_ROOT}/Ruby/${RUBY_VERSION}/x64"
           COMPLETE_FILE="${RUBY_PREFIX}.complete"
           if [ -f "$COMPLETE_FILE" ]; then
+            if command -v sudo >/dev/null 2>&1; then
+              sudo chown -R "$(id -u):$(id -g)" "$RUBY_PREFIX" "$COMPLETE_FILE" || true
+            fi
             exit 0
           fi
           lock_file=/tmp/ruby-toolcache-install.lock
           exec 9>"$lock_file"
           flock 9
           if [ -f "$COMPLETE_FILE" ]; then
+            if command -v sudo >/dev/null 2>&1; then
+              sudo chown -R "$(id -u):$(id -g)" "$RUBY_PREFIX" "$COMPLETE_FILE" || true
+            fi
             exit 0
           fi
           if command -v sudo >/dev/null 2>&1; then SUDO="sudo"; else SUDO=""; fi
@@ -70,6 +76,11 @@ jobs:
           $SUDO mkdir -p "$(dirname "$RUBY_PREFIX")"
           $SUDO ruby-build "$RUBY_VERSION" "$RUBY_PREFIX"
           $SUDO touch "$COMPLETE_FILE"
+
+          # Ensure later gem/bundler steps can write without sudo.
+          OWNER_UID="$(id -u)"
+          OWNER_GID="$(id -g)"
+          $SUDO chown -R "$OWNER_UID:$OWNER_GID" "$RUBY_PREFIX" "$COMPLETE_FILE"
 
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
