@@ -39,10 +39,55 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Prepare Ruby toolcache on self-hosted runner
+        if: ${{ runner.environment == 'self-hosted' }}
+        env:
+          RUBY_VERSION: 3.1.4
+          RUBY_PREFIX: /opt/hostedtoolcache/Ruby/3.1.4/x64
+        run: |
+          set -euo pipefail
+
+          COMPLETE_FILE="${RUBY_PREFIX}.complete"
+          if [ -f "$COMPLETE_FILE" ]; then
+            echo "Ruby ${RUBY_VERSION} already prepared in toolcache"
+            exit 0
+          fi
+
+          # Serialize installation to avoid parallel writes to toolcache.
+          lock_file=/tmp/ruby-toolcache-install.lock
+          exec 9>"$lock_file"
+          flock 9
+
+          if [ -f "$COMPLETE_FILE" ]; then
+            echo "Ruby ${RUBY_VERSION} became available while waiting lock"
+            exit 0
+          fi
+
+          if command -v sudo >/dev/null 2>&1; then
+            SUDO="sudo"
+          else
+            SUDO=""
+          fi
+
+          $SUDO apt-get update
+          $SUDO apt-get install -y --no-install-recommends \
+            autoconf bison build-essential libssl-dev libyaml-dev \
+            libreadline-dev zlib1g-dev libncurses5-dev libffi-dev \
+            libgdbm-dev rustc
+
+          if ! command -v ruby-build >/dev/null 2>&1; then
+            git clone --depth 1 https://github.com/rbenv/ruby-build.git /tmp/ruby-build
+            $SUDO /tmp/ruby-build/install.sh
+          fi
+
+          $SUDO mkdir -p "$(dirname "$RUBY_PREFIX")"
+          $SUDO ruby-build "$RUBY_VERSION" "$RUBY_PREFIX"
+          $SUDO touch "$COMPLETE_FILE"
+
       - name: Setup Ruby
         uses: ruby/setup-ruby@8575951200e472d5f2d95c625da0c7bec8217c42 # v1.161.0
         with:
-          ruby-version: '3.1' # Not needed with a .ruby-version file
+          ruby-version: '3.1.4'
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
           cache-version: 0 # Increment this number if you need to re-download cached gems
       - name: Setup Pages
