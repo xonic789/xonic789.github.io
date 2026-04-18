@@ -11,6 +11,7 @@ tags:
   - security
   - infra
 published: true
+pin: true
 ---
 
 멀티모듈 구조로 서비스를 운영하게 되면, 애플리케이션 배포 방식만 달라지는 것이 아니라 운영 접근 방식도 함께 정리해야 한다.  
