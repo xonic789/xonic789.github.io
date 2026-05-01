@@ -1,6 +1,7 @@
 ---
 title: AWS Client VPN으로 Private 리소스 접근을 표준화한 방법
 date: 2026-04-08 00:03:00 +0900
+description: AWS Client VPN으로 내부 리소스 접근 방식을 표준화하며 보안과 운영 편의성을 함께 개선한 경험을 정리한 글입니다.
 categories:
   - 인프라
   - 운영

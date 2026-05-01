@@ -1,8 +1,11 @@
 ---
 title: jekyll chirpy theme 사용법
-date: 2024-04-10 19::15 +0900
+date: 2024-04-10 19:15:00 +0900
+description: Jekyll Chirpy 블로그에서 새 글을 작성할 때 필요한 front matter, 이미지, 카테고리, 태그 규칙을 정리한 글입니다.
 categories: [깃허브블로그]
+tags: [jekyll, chirpy, blogging, seo]
 pin: true
+published: true
 ---
 
 ## 이름 지정과 경로
@@ -16,8 +19,12 @@ pin: true
 ---
 title: TITLE
 date: YYYY-MM-DD HH:MM:SS +/-TTTT
+description: Search result snippet for this post
 categories: [TOP_CATEGORIE, SUB_CATEGORIE]
 tags: [TAG]     # TAG names should always be lowercase
+image:
+  path: /path/to/preview-image.png
+  alt: Preview image alt text
 ---
 ```
 
@@ -27,6 +34,7 @@ tags: [TAG]     # TAG names should always be lowercase
 
 ### 카테고리와 태그
 카테고리는 최대 두 개 요소를 포함하도록 디자인 되어있고, 태그는 0개에서 무한대를 사용할 수 있습니다.
+검색 결과 품질을 위해 `description`은 가능한 한 항상 작성하고, 영문 태그는 소문자로 유지하는 편이 좋습니다.
 
 ### 작성자 정보
 작성자 정보를 추가하려면 `_data/authors.yml` 파일에 작성자 정보를 추가해야합니다.
@@ -70,6 +78,8 @@ mermaid: true
 ```
 
 ## 이미지
+검색엔진과 공유 카드 미리보기를 위해 대표 이미지가 있다면 `image`를 같이 설정하는 것을 권장합니다.
+
 ### 캡션
 이미지의 다음 줄에 기울임을 추가하면 캡션으로 처리되어 이미지 하단에 나타납니다.
 ```markdown
