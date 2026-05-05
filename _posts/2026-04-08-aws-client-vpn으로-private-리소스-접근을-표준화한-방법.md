@@ -67,15 +67,8 @@ Private 리소스 접근을 위한 방법은 여러 가지가 있다.
 
 구성은 대략 아래와 같았다.
 
-```text
-사용자 PC
- └─ AWS VPN Client (.ovpn + 클라이언트 인증서)
- └─ Client VPN Endpoint (split tunnel, UDP 443)
- └─ 운영용 VPC
-    ├─ 피어링된 서비스 VPC
-    ├─ 개발 환경 VPC
-    └─ 내부 리소스(ALB, RDS, Grafana 등)
-```
+![AWS Client VPN 아키텍처 다이어그램](/assets/img/posts/2026/aws-client-vpn-private-access-architecture.svg){: w="1100" }
+_사용자는 하나의 VPN 진입점으로 접속하고, 운영용 VPC를 통해 내부 리소스와 연결된 VPC에 접근한다._
 
 핵심은 운영 접근의 중심이 되는 VPC를 하나 두고, 사용자는 Client VPN Endpoint에 접속한 뒤 그 네트워크를 통해 필요한 내부 리소스에 접근하도록 만든 것이다.
 
@@ -91,11 +84,8 @@ Private 리소스 접근을 위한 방법은 여러 가지가 있다.
 
 구조는 단순하다.
 
-```text
-CA
- ├─ Server Certificate → ACM 등록
- └─ Client Certificate → 사용자별 .ovpn에 포함
-```
+![AWS Client VPN 인증서 기반 동작 원리](/assets/img/posts/2026/aws-client-vpn-certificate-flow.svg){: w="1100" }
+_CA가 서버/클라이언트 인증서를 발급하고, 연결 시 Mutual TLS로 상호 검증하며, 오프보딩 시에는 CRL로 재접속을 차단한다._
 
 사용자는 개인별 `.ovpn` 파일을 사용해 연결한다.  
 이 파일 안에는 인증 정보가 포함되어 있으므로, 사실상 개인 자격 증명처럼 다뤄야 한다.

@@ -16,7 +16,7 @@ layout: compress
 <html lang="{{ page.lang | default: site.alt_lang | default: site.lang }}" {{ prefer_mode }}>
   {% include head.html %}
 
-  <body>
+  <body class="{% if page.essay %}essay-page{% endif %}">
     {% include sidebar.html lang=lang %}
 
     <div id="main-wrapper" class="d-flex justify-content-center">
@@ -32,30 +32,34 @@ layout: compress
             {% endif %}
           </main>
 
-          <!-- panel -->
-          <aside aria-label="Panel" id="panel-wrapper" class="col-xl-3 ps-2 mb-5 text-muted">
-            <div class="access">
-              {% include_cached update-list.html lang=lang %}
-              {% include_cached trending-tags.html lang=lang %}
-            </div>
+<!-- panel -->
+{% unless page.essay %}
+<aside aria-label="Panel" id="panel-wrapper" class="col-xl-3 ps-2 mb-5 text-muted">
+  <div class="access">
+    {% include_cached update-list.html lang=lang %}
+    {% include_cached trending-tags.html lang=lang %}
+  </div>
 
-            {% for _include in layout.panel_includes %}
-              {% assign _include_path = _include | append: '.html' %}
-              {% include {{ _include_path }} lang=lang %}
-            {% endfor %}
-          </aside>
+  {% for _include in layout.panel_includes %}
+    {% assign _include_path = _include | append: '.html' %}
+    {% include {{ _include_path }} lang=lang %}
+  {% endfor %}
+</aside>
+{% endunless %}
         </div>
 
         <div class="row">
           <!-- tail -->
-          <div id="tail-wrapper" class="col-12 col-lg-11 col-xl-9 px-md-4">
-            {% for _include in layout.tail_includes %}
-              {% assign _include_path = _include | append: '.html' %}
-              {% include {{ _include_path }} lang=lang %}
-            {% endfor %}
+<div id="tail-wrapper" class="col-12 col-lg-11 col-xl-9 px-md-4">
+  {% unless page.essay %}
+  {% for _include in layout.tail_includes %}
+    {% assign _include_path = _include | append: '.html' %}
+    {% include {{ _include_path }} lang=lang %}
+  {% endfor %}
+  {% endunless %}
 
-            {% include_cached footer.html lang=lang %}
-          </div>
+  {% include_cached footer.html lang=lang %}
+</div>
         </div>
 
         {% include_cached search-results.html lang=lang %}
