@@ -1,19 +1,20 @@
 ---
 title: ovpn 파일은 무엇을 담고, OpenVPN은 어떻게 터널을 여는가
-date: 2026-05-05 22:10:00 +0900
-description: AWS Client VPN과 OpenVPN을 기준으로, .ovpn 파일이 실제로 담는 것과 클라이언트/서버가 인증서 검증, 세션 키 합의, 터널 암호화를 어떤 순서로 수행하는지 PKI와 TLS 관점에서 정리한 기술 노트입니다.
+date: 2026-05-05 20:34:49.000000000 +09:00
+description: AWS Client VPN과 OpenVPN을 기준으로, .ovpn 파일이 실제로 담는 것과 클라이언트/서버가 인증서 검증,
+  세션 키 합의, 터널 암호화를 어떤 순서로 수행하는지 PKI와 TLS 관점에서 정리한 기술 노트입니다.
 categories:
-  - 인프라
-  - 보안
+- 인프라
+- 보안
 tags:
-  - aws
-  - client-vpn
-  - openvpn
-  - ovpn
-  - pki
-  - tls
-  - mtls
-  - security
+- aws
+- client-vpn
+- openvpn
+- ovpn
+- pki
+- tls
+- mtls
+- security
 published: true
 pin: true
 ---
