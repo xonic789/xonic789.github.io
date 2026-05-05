@@ -82,7 +82,8 @@ if drafts.empty?
 end
 
 published_paths = []
-staged_paths = []
+added_paths = []
+removed_paths = []
 
 drafts.each do |source_path, frontmatter, body, scheduled_at|
   target_path = published_target_path(source_path, scheduled_at)
@@ -92,13 +93,18 @@ drafts.each do |source_path, frontmatter, body, scheduled_at|
 
   rewrite_as_post(source_path, target_path, frontmatter, body)
   published_paths << target_path
-  staged_paths << source_path
-  staged_paths << target_path
+  removed_paths << source_path
+  added_paths << target_path
   puts "[publish_scheduled_drafts] published #{File.basename(source_path)} -> #{File.basename(target_path)}"
 end
 
 Dir.chdir(REPO_ROOT) do
-  run!("git add -- #{staged_paths.map { |path| Shellwords.escape(path.sub("#{REPO_ROOT}/", "")) }.join(' ')}")
+  unless removed_paths.empty?
+    run!("git rm --cached --ignore-unmatch -- #{removed_paths.map { |path| Shellwords.escape(path.sub("#{REPO_ROOT}/", "")) }.join(' ')}")
+  end
+  unless added_paths.empty?
+    run!("git add -- #{added_paths.map { |path| Shellwords.escape(path.sub("#{REPO_ROOT}/", "")) }.join(' ')}")
+  end
   run!("git commit -m \"Publish scheduled drafts\"")
   run!("git push")
 end
