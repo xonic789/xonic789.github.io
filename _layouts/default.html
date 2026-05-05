@@ -16,7 +16,7 @@ layout: compress
 <html lang="{{ page.lang | default: site.alt_lang | default: site.lang }}" {{ prefer_mode }}>
   {% include head.html %}
 
-  <body class="{% if page.essay %}essay-page{% endif %}">
+  <body class="{% if page.essay %}essay-page{% endif %}{% if page.layout == 'essays' %}{% if page.essay %} {% endif %}essays-page{% endif %}">
     {% include sidebar.html lang=lang %}
 
     <div id="main-wrapper" class="d-flex justify-content-center">

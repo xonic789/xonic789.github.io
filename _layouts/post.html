@@ -100,9 +100,30 @@ tail_includes:
     {% endunless %}
   </header>
 
+  {% if page.essay %}
+  <nav class="essay-chapter-nav" aria-label="Essay Chapters">
+    <div class="essay-chapter-scroll" id="essay-chapter-nav"></div>
+  </nav>
+
+  <div class="essay-reader-meta">
+    <div class="essay-reader-progress" id="essay-reader-progress" aria-live="polite"></div>
+  </div>
+  {% endif %}
+
   <div class="content">
     {{ content }}
   </div>
+
+  {% if page.essay %}
+  <div class="essay-reader-controls" id="essay-reader-controls">
+    <button type="button" class="essay-reader-button" id="essay-prev-button" aria-label="Previous Chapter">
+      <span>이전 장</span>
+    </button>
+    <button type="button" class="essay-reader-button" id="essay-next-button" aria-label="Next Chapter">
+      <span>다음 장</span>
+    </button>
+  </div>
+  {% endif %}
 
   {% unless page.essay %}
   <div class="post-tail-wrapper text-muted">
@@ -157,6 +178,183 @@ tail_includes:
   <!-- div.post-tail-wrapper -->
   {% endunless %}
 </article>
+
+{% if page.essay %}
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const nav = document.getElementById('essay-chapter-nav');
+  const content = document.querySelector('article .content');
+  const progress = document.getElementById('essay-reader-progress');
+  const prevButton = document.getElementById('essay-prev-button');
+  const nextButton = document.getElementById('essay-next-button');
+  const headings = Array.from(document.querySelectorAll('article .content h2[id]'));
+
+  if (!nav || !content || headings.length === 0) {
+    return;
+  }
+
+  const chapters = [];
+  let currentChapter = null;
+
+  Array.from(content.children).forEach((node) => {
+    if (node.tagName === 'H2' && node.id) {
+      currentChapter = {
+        id: node.id,
+        title: node.innerText.trim(),
+        nodes: [node]
+      };
+      chapters.push(currentChapter);
+      return;
+    }
+
+    if (currentChapter) {
+      currentChapter.nodes.push(node);
+    }
+  });
+
+  if (chapters.length === 0) {
+    return;
+  }
+
+  const viewport = document.createElement('div');
+  viewport.className = 'essay-chapter-viewport';
+
+  const track = document.createElement('div');
+  track.className = 'essay-chapter-track';
+
+  chapters.forEach((chapter, index) => {
+    const panel = document.createElement('section');
+    panel.className = 'essay-chapter-panel';
+    panel.dataset.chapter = chapter.id;
+    panel.setAttribute('aria-label', chapter.title);
+    panel.setAttribute('data-index', String(index));
+
+    chapter.nodes.forEach((node) => panel.appendChild(node));
+    track.appendChild(panel);
+    chapter.panel = panel;
+  });
+
+  content.appendChild(viewport);
+  viewport.appendChild(track);
+
+  const links = chapters.map((chapter, index) => {
+    const link = document.createElement('a');
+    link.href = `#${chapter.id}`;
+    link.className = 'essay-chapter-link';
+    link.textContent = chapter.title;
+    link.dataset.target = chapter.id;
+    link.dataset.index = String(index);
+    link.addEventListener('click', (event) => {
+      event.preventDefault();
+      goTo(index);
+    });
+    nav.appendChild(link);
+    return link;
+  });
+
+  const updateButtons = (index) => {
+    if (!prevButton || !nextButton) {
+      return;
+    }
+
+    prevButton.disabled = index === 0;
+    nextButton.disabled = index === chapters.length - 1;
+  };
+
+  const setActive = (id, index) => {
+    links.forEach((link) => {
+      const active = link.dataset.target === id;
+      link.classList.toggle('active', active);
+
+      if (active) {
+        link.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+      }
+    });
+
+    if (progress) {
+      progress.textContent = `${index + 1} / ${chapters.length}`;
+    }
+
+    updateButtons(index);
+  };
+
+  let currentIndex = 0;
+  let pointerStartX = null;
+  let pointerStartY = null;
+
+  const goTo = (index) => {
+    const safeIndex = Math.max(0, Math.min(index, chapters.length - 1));
+    currentIndex = safeIndex;
+
+    track.style.transform = `translateX(-${safeIndex * 100}%)`;
+
+    chapters.forEach((chapter, chapterIndex) => {
+      const active = chapterIndex === safeIndex;
+      chapter.panel.classList.toggle('active', active);
+      chapter.panel.setAttribute('aria-hidden', active ? 'false' : 'true');
+    });
+
+    const activeChapter = chapters[safeIndex];
+    setActive(activeChapter.id, safeIndex);
+
+    if (window.location.hash !== `#${activeChapter.id}`) {
+      history.replaceState(null, '', `#${activeChapter.id}`);
+    }
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  if (prevButton) {
+    prevButton.addEventListener('click', () => goTo(currentIndex - 1));
+  }
+
+  if (nextButton) {
+    nextButton.addEventListener('click', () => goTo(currentIndex + 1));
+  }
+
+  viewport.addEventListener('pointerdown', (event) => {
+    pointerStartX = event.clientX;
+    pointerStartY = event.clientY;
+  });
+
+  viewport.addEventListener('pointerup', (event) => {
+    if (pointerStartX === null || pointerStartY === null) {
+      return;
+    }
+
+    const deltaX = event.clientX - pointerStartX;
+    const deltaY = event.clientY - pointerStartY;
+
+    pointerStartX = null;
+    pointerStartY = null;
+
+    if (Math.abs(deltaX) < 60 || Math.abs(deltaX) < Math.abs(deltaY)) {
+      return;
+    }
+
+    if (deltaX < 0) {
+      goTo(currentIndex + 1);
+    } else {
+      goTo(currentIndex - 1);
+    }
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'ArrowRight') {
+      goTo(currentIndex + 1);
+    }
+
+    if (event.key === 'ArrowLeft') {
+      goTo(currentIndex - 1);
+    }
+  });
+
+  const initialHash = window.location.hash.replace('#', '');
+  const initialIndex = chapters.findIndex((chapter) => chapter.id === initialHash);
+  goTo(initialIndex >= 0 ? initialIndex : 0);
+});
+</script>
+{% endif %}
 
 {% unless page.essay %}
 <script src="https://utteranc.es/client.js"

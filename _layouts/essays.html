@@ -1,0 +1,77 @@
+---
+layout: page
+---
+
+{% include lang.html %}
+
+{% assign essays = site.posts | where: 'essay', true %}
+{% assign featured = essays | first %}
+
+<div class="content">
+  <section class="essays-hero">
+    <div
+      class="essays-cover"
+      {% if page.cover_image %}
+        style="background-image: linear-gradient(to top, rgba(16, 18, 24, 0.72), rgba(16, 18, 24, 0.18)), url('{{ page.cover_image }}');"
+      {% endif %}
+    >
+      <div class="essays-cover-copy">
+        <p class="essays-eyebrow">Essay Shelf</p>
+        <p class="essays-intro">
+          기술을 직접 설명하는 글과는 결이 조금 다른 글들을 따로 모아둔 곳이다. 일, 태도, 판단, 조직에 대해 오래 남는 질문이 여기로 모인다.
+        </p>
+        <div class="essays-summary">
+          <span>{{ essays.size }}개의 글</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {% if featured %}
+    <section class="essays-featured">
+      <p class="essays-section-label">Featured</p>
+      <article class="essays-featured-entry">
+        <a href="{{ featured.url | relative_url }}" class="essays-featured-link">
+          <div class="essays-featured-meta">
+            <span>{% include datetime.html date=featured.date lang=lang %}</span>
+            {% if featured.categories.size > 0 %}
+              <span>
+                {% for category in featured.categories %}
+                  {{ category }}{% unless forloop.last %}, {% endunless %}
+                {% endfor %}
+              </span>
+            {% endif %}
+          </div>
+          <h2>{{ featured.title }}</h2>
+          <p>{{ featured.description }}</p>
+        </a>
+      </article>
+    </section>
+  {% endif %}
+
+  <section class="essays-list-section">
+    <div class="essays-list-header">
+      <p class="essays-section-label mb-0">All Essays</p>
+    </div>
+
+    <div class="essays-list">
+      {% for post in essays %}
+        <article class="essays-entry">
+          <a href="{{ post.url | relative_url }}" class="essays-entry-link">
+            <div class="essays-entry-main">
+              <h3>{{ post.title }}</h3>
+              <p>{{ post.description }}</p>
+            </div>
+            <div class="essays-entry-meta">
+              <span>{% include datetime.html date=post.date lang=lang %}</span>
+            </div>
+          </a>
+        </article>
+      {% endfor %}
+    </div>
+  </section>
+
+  {% if essays.size == 0 %}
+    <p class="text-muted">아직 공개된 에세이는 없다.</p>
+  {% endif %}
+</div>

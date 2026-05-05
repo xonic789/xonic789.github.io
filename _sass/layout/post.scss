@@ -370,25 +370,187 @@ header {
 }
 
 body.essay-page {
+  #sidebar {
+    display: none !important;
+  }
+
+  #main-wrapper,
+  #topbar-wrapper {
+    margin-left: 0 !important;
+    left: 0 !important;
+  }
+
+  #main-wrapper > .container {
+    max-width: 980px;
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+  }
+
   #panel-wrapper {
     display: none;
+  }
+
+  #sidebar-trigger,
+  #search-trigger,
+  #topbar-title,
+  search,
+  #search-cancel {
+    display: none !important;
+  }
+
+  #topbar {
+    justify-content: center !important;
+  }
+
+  #breadcrumb {
+    width: auto;
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: center;
   }
 
   main,
   #tail-wrapper {
     flex: 0 0 100%;
-    max-width: 860px;
+    max-width: 100%;
   }
 
   article {
-    max-width: 760px;
+    max-width: 720px;
     margin: 0 auto;
   }
 
   article header h1 {
     font-size: clamp(2rem, 4vw, 3rem);
     line-height: 1.2;
-    margin-bottom: 1rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .essay-chapter-nav {
+    position: sticky;
+    top: 0.75rem;
+    z-index: 5;
+    margin: 0 auto 0.75rem;
+    max-width: 720px;
+    padding: 0.35rem 0 0.4rem;
+    background: linear-gradient(
+      to bottom,
+      var(--main-bg) 0%,
+      var(--main-bg) 82%,
+      rgba(0, 0, 0, 0) 100%
+    );
+  }
+
+  .essay-chapter-scroll {
+    display: flex;
+    gap: 0.6rem;
+    overflow-x: auto;
+    padding: 0.2rem 0.1rem 0.5rem;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .essay-chapter-link {
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.3rem;
+    padding: 0.45rem 0.9rem;
+    border-radius: 999px;
+    border: 1px solid var(--main-border-color);
+    background: var(--main-bg);
+    color: var(--text-muted-color);
+    font-size: 0.92rem;
+    line-height: 1.2;
+    white-space: nowrap;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      color: var(--heading-color);
+      border-color: var(--text-muted-color);
+      text-decoration: none;
+    }
+
+    &.active {
+      color: var(--heading-color);
+      background: var(--card-bg);
+      border-color: var(--heading-color);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    }
+  }
+
+  .essay-reader-meta {
+    max-width: 720px;
+    margin: 0 auto 1.5rem;
+  }
+
+  .essay-reader-progress {
+    color: var(--text-muted-color);
+    font-size: 0.92rem;
+    text-align: right;
+  }
+
+  .essay-chapter-viewport {
+    overflow: hidden;
+    touch-action: pan-y;
+  }
+
+  .essay-chapter-track {
+    display: flex;
+    align-items: flex-start;
+    transition: transform 0.28s ease-in-out;
+    will-change: transform;
+  }
+
+  .essay-chapter-panel {
+    flex: 0 0 100%;
+    width: 100%;
+    max-width: 100%;
+    opacity: 0.28;
+    transition: opacity 0.2s ease-in-out;
+    pointer-events: none;
+  }
+
+  .essay-chapter-panel.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .essay-reader-controls {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.75rem;
+    max-width: 720px;
+    margin: 2.25rem auto 0;
+  }
+
+  .essay-reader-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 2.8rem;
+    padding: 0.65rem 1rem;
+    border: 1px solid var(--main-border-color);
+    border-radius: 999px;
+    background: var(--main-bg);
+    color: var(--heading-color);
+    font-size: 0.95rem;
+    line-height: 1;
+    transition: all 0.2s ease-in-out;
+
+    &:hover:not(:disabled) {
+      border-color: var(--heading-color);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+    }
+
+    &:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+    }
   }
 
   .essay-kicker {
@@ -399,19 +561,24 @@ body.essay-page {
   }
 
   article .content {
-    font-size: 1.08rem;
-    line-height: 1.95;
+    font-size: 1.12rem;
+    line-height: 2.05;
   }
 
   article .content p {
-    margin: 1.35rem 0;
+    margin: 1.5rem 0;
   }
 
   article .content h2 {
-    margin-top: 4rem;
+    scroll-margin-top: 5.5rem;
+    margin-top: 0;
     margin-bottom: 1.25rem;
     font-size: 1.65rem;
     line-height: 1.35;
+  }
+
+  article .content h2 .anchor {
+    display: none !important;
   }
 
   article .content blockquote {
@@ -423,5 +590,24 @@ body.essay-page {
   .post-tail-wrapper,
   #toc-wrapper {
     display: none;
+  }
+
+  footer {
+    border-top: 0;
+    margin-top: 4rem;
+  }
+
+  @media all and (max-width: 576px) {
+    .essay-reader-controls {
+      margin-top: 1.75rem;
+    }
+
+    .essay-reader-button {
+      flex: 1 1 0;
+    }
+
+    .essay-reader-progress {
+      text-align: left;
+    }
   }
 }

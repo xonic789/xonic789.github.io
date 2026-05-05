@@ -1,0 +1,1 @@
+0 23 * * * cd /Users/seungwoo/workspace/xonic789.github.io && /opt/homebrew/opt/ruby@3.1/bin/ruby scripts/publish_scheduled_drafts.rb >> /tmp/xonic-publish-scheduled-drafts.log 2>&1
