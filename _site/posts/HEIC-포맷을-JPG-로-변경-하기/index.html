@@ -32,18 +32,19 @@
 <meta name="generator" content="Jekyll v4.3.3" />
 <meta property="og:title" content="HEIC 포맷을 JPG 로 CLI 를 통해서 변경하기" />
 <meta property="og:locale" content="ko" />
-<meta name="description" content="HEIC 포맷을 JPG 로 변경하기 가끔 아이폰으로 찍은 사진을 맥북에 에어드롭으로 전송하면 HEIC 포맷으로 저장되는 경우가 있다. 이런 경우, HEIC 포맷을 JPG 로 변경하고 싶을 때가 있다. 이때 CLI 를 사용하면 편리하게 변경할 수 있다. 1 2 # HEIC 포맷을 JPG 로 변경 sips -s format jpeg -s formatOptions best image.heic --out image.jpg 이렇게 하면 image.heic 파일이 image.jpg 로 변경 된다." />
-<meta property="og:description" content="HEIC 포맷을 JPG 로 변경하기 가끔 아이폰으로 찍은 사진을 맥북에 에어드롭으로 전송하면 HEIC 포맷으로 저장되는 경우가 있다. 이런 경우, HEIC 포맷을 JPG 로 변경하고 싶을 때가 있다. 이때 CLI 를 사용하면 편리하게 변경할 수 있다. 1 2 # HEIC 포맷을 JPG 로 변경 sips -s format jpeg -s formatOptions best image.heic --out image.jpg 이렇게 하면 image.heic 파일이 image.jpg 로 변경 된다." />
+<meta name="description" content="macOS의 sips 명령으로 HEIC 이미지를 JPG로 변환하는 방법과 HEIC 포맷의 특징을 정리한 글입니다." />
+<meta property="og:description" content="macOS의 sips 명령으로 HEIC 이미지를 JPG로 변환하는 방법과 HEIC 포맷의 특징을 정리한 글입니다." />
 <link rel="canonical" href="http://localhost:4000/posts/HEIC-%ED%8F%AC%EB%A7%B7%EC%9D%84-JPG-%EB%A1%9C-%EB%B3%80%EA%B2%BD-%ED%95%98%EA%B8%B0/" />
 <meta property="og:url" content="http://localhost:4000/posts/HEIC-%ED%8F%AC%EB%A7%B7%EC%9D%84-JPG-%EB%A1%9C-%EB%B3%80%EA%B2%BD-%ED%95%98%EA%B8%B0/" />
 <meta property="og:site_name" content="Xonic의 블로그" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2024-05-27T00:00:00+09:00" />
-<meta name="twitter:card" content="summary" />
+<meta property="article:published_time" content="2024-05-27T15:05:00+09:00" />
+<meta property="og:image" content="http://localhost:4000/assets/img/favicons/android-chrome-512x512.png" /><meta name="twitter:card" content="summary_large_image" />
+      <meta property="twitter:image" content="http://localhost:4000/assets/img/favicons/android-chrome-512x512.png" />
 <meta property="twitter:title" content="HEIC 포맷을 JPG 로 CLI 를 통해서 변경하기" />
 <meta name="google-site-verification" content="txdTnedMbFhWIC4nuKM-3CmxWCZ8xmENPhJc-mDuU3s" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-05-27T00:00:00+09:00","datePublished":"2024-05-27T00:00:00+09:00","description":"HEIC 포맷을 JPG 로 변경하기 가끔 아이폰으로 찍은 사진을 맥북에 에어드롭으로 전송하면 HEIC 포맷으로 저장되는 경우가 있다. 이런 경우, HEIC 포맷을 JPG 로 변경하고 싶을 때가 있다. 이때 CLI 를 사용하면 편리하게 변경할 수 있다. 1 2 # HEIC 포맷을 JPG 로 변경 sips -s format jpeg -s formatOptions best image.heic --out image.jpg 이렇게 하면 image.heic 파일이 image.jpg 로 변경 된다.","headline":"HEIC 포맷을 JPG 로 CLI 를 통해서 변경하기","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/HEIC-%ED%8F%AC%EB%A7%B7%EC%9D%84-JPG-%EB%A1%9C-%EB%B3%80%EA%B2%BD-%ED%95%98%EA%B8%B0/"},"url":"http://localhost:4000/posts/HEIC-%ED%8F%AC%EB%A7%B7%EC%9D%84-JPG-%EB%A1%9C-%EB%B3%80%EA%B2%BD-%ED%95%98%EA%B8%B0/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-05-01T21:21:20+09:00","datePublished":"2024-05-27T15:05:00+09:00","description":"macOS의 sips 명령으로 HEIC 이미지를 JPG로 변환하는 방법과 HEIC 포맷의 특징을 정리한 글입니다.","headline":"HEIC 포맷을 JPG 로 CLI 를 통해서 변경하기","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/HEIC-%ED%8F%AC%EB%A7%B7%EC%9D%84-JPG-%EB%A1%9C-%EB%B3%80%EA%B2%BD-%ED%95%98%EA%B8%B0/"},"url":"http://localhost:4000/posts/HEIC-%ED%8F%AC%EB%A7%B7%EC%9D%84-JPG-%EB%A1%9C-%EB%B3%80%EA%B2%BD-%ED%95%98%EA%B8%B0/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -271,12 +272,12 @@
 </head>
 
 
-  <body>
+  <body class="">
     <!-- The Side Bar -->
 
 <aside aria-label="Sidebar" id="sidebar" class="d-flex flex-column align-items-end">
   <header class="profile-wrapper">
-    <a href="/" id="avatar" class="rounded-circle"><img src="https://chirpy-img.netlify.app/commons/avatar.jpg" width="112" height="112" alt="avatar" onerror="this.style.display='none'"></a>
+    <a href="/" id="avatar" class="rounded-circle"><img src="/assets/img/favicons/android-chrome-192x192.png" width="112" height="112" alt="avatar" onerror="this.style.display='none'"></a>
 
     <h1 class="site-title">
       <a href="/">Xonic의 블로그</a>
@@ -617,7 +618,11 @@
   <header>
     <h1 data-toc-skip>HEIC 포맷을 JPG 로 CLI 를 통해서 변경하기</h1>
     
+    
+      <p class="post-desc fw-light mb-4">macOS의 `sips` 명령으로 HEIC 이미지를 JPG로 변환하는 방법과 HEIC 포맷의 특징을 정리한 글입니다.</p>
+    
 
+    
     <div class="post-meta text-muted">
       <!-- published date -->
       <span>
@@ -632,7 +637,7 @@
 
 <time
   
-  data-ts="1716735600"
+  data-ts="1716789900"
   data-df="ll"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
@@ -644,6 +649,29 @@
       </span>
 
       <!-- lastmod date -->
+      
+        <span>
+          Updated
+          <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1777638080"
+  data-df="ll"
+  
+    data-bs-toggle="tooltip" data-bs-placement="bottom"
+  
+>
+  May  1, 2026
+</time>
+
+        </span>
       
 
       
@@ -664,6 +692,13 @@
 
         <div>
           <!-- pageviews -->
+          
+            <span>
+              <em id="pageviews">
+                <i class="fas fa-spinner fa-spin small"></i>
+              </em>
+              views
+            </span>
           
 
           <!-- read time -->
@@ -694,6 +729,7 @@
         </div>
       </div>
     </div>
+    
   </header>
 
   <div class="content">
@@ -738,8 +774,16 @@ Joint Photographic Experts Group에서 개발했고, 손실 압축 방식을 사
 
   </div>
 
+  
   <div class="post-tail-wrapper text-muted">
     <!-- categories -->
+    
+      <div class="post-meta mb-3">
+        <i class="far fa-folder-open fa-fw me-1"></i>
+        
+          <a href="/categories/macos/">macos</a>,
+          <a href="/categories/cli/">cli</a>
+      </div>
     
 
     <!-- tags -->
@@ -750,22 +794,22 @@ Joint Photographic Experts Group에서 개발했고, 손실 압축 방식을 사
           <a
             href="/tags/cli/"
             class="post-tag no-text-decoration"
-          >CLI</a>
+          >cli</a>
         
           <a
             href="/tags/mac/"
             class="post-tag no-text-decoration"
-          >MAC</a>
+          >mac</a>
         
           <a
             href="/tags/heic/"
             class="post-tag no-text-decoration"
-          >HEIC</a>
+          >heic</a>
         
           <a
             href="/tags/jpg/"
             class="post-tag no-text-decoration"
-          >JPG</a>
+          >jpg</a>
         
       </div>
     
@@ -838,7 +882,9 @@ Joint Photographic Experts Group에서 개발했고, 손실 압축 방식을 사
     <!-- .post-tail-bottom -->
   </div>
   <!-- div.post-tail-wrapper -->
+  
 </article>
+
 
 <script src="https://utteranc.es/client.js"
         repo="xonic789/xonic789.github.io"
@@ -849,13 +895,15 @@ Joint Photographic Experts Group에서 개발했고, 손실 압축 방식을 사
 </script>
 
 
+
             
           </main>
 
-          <!-- panel -->
-          <aside aria-label="Panel" id="panel-wrapper" class="col-xl-3 ps-2 mb-5 text-muted">
-            <div class="access">
-              <!-- Get 5 last posted/updated posts -->
+<!-- panel -->
+
+<aside aria-label="Panel" id="panel-wrapper" class="col-xl-3 ps-2 mb-5 text-muted">
+  <div class="access">
+    <!-- Get 5 last posted/updated posts -->
 
 
 
@@ -878,28 +926,28 @@ Joint Photographic Experts Group에서 개발했고, 손실 압축 방식을 사
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/%EC%9D%B8%ED%94%84%EC%BD%98-%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%82%B9-%EC%A4%80%EB%B9%84-%EC%99%84%EB%A3%8C!/">인프콘 네트워킹 준비 완료!</a>
+          <a href="/posts/%EB%8B%B9%EA%B7%BC-%EC%A0%84%ED%98%95-%ED%9A%8C%EA%B3%A0/">뒤늦은 당근 전형 회고</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/HEIC-%ED%8F%AC%EB%A7%B7%EC%9D%84-JPG-%EB%A1%9C-%EB%B3%80%EA%B2%BD-%ED%95%98%EA%B8%B0/">HEIC 포맷을 JPG 로 CLI 를 통해서 변경하기</a>
+          <a href="/posts/aws-client-vpn%EC%9C%BC%EB%A1%9C-private-%EB%A6%AC%EC%86%8C%EC%8A%A4-%EC%A0%91%EA%B7%BC%EC%9D%84-%ED%91%9C%EC%A4%80%ED%99%94%ED%95%9C-%EB%B0%A9%EB%B2%95/">AWS Client VPN으로 Private 리소스 접근을 표준화한 방법</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/%EA%B0%9C%EB%B0%9C%EC%9E%90%EB%9D%BC%EB%A9%B4-%EA%BC%AD-%EC%95%8C%EC%95%84%EC%95%BC-%ED%95%A0-Decimal-%EB%8F%88-%EA%B3%84%EC%82%B0,-%EC%A0%9C%EB%8C%80%EB%A1%9C-%ED%95%98%EC%9E%90!/">개발자라면 Decimal과 부동소수점은 알아야지?</a>
+          <a href="/posts/%EB%A1%9C%EC%BB%AC-%EC%BA%90%EC%8B%9C%EB%8A%94-%EC%99%9C-%EC%9A%B4%EC%98%81%EC%97%90%EC%84%9C-%EB%8B%B9%EC%8B%A0%EC%9D%84-%EB%B0%B0%EC%8B%A0%ED%95%98%EB%8A%94%EA%B0%80/">로컬 캐시는 왜 운영에서 당신을 배신하는가</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/H264-%ED%91%9C%EC%A4%80-%EC%BD%94%EB%8D%B1%EA%B3%BC-%EA%B5%AC%ED%98%84%EC%B2%B4/">H264 표준 코덱과 구현체</a>
+          <a href="/posts/%EB%8C%80%EA%B7%9C%EB%AA%A8-%EC%8B%9C%EC%8A%A4%ED%85%9C-%EC%84%A4%EA%B3%84-%EA%B8%B0%EC%B4%88/">대규모 시스템 설계 기초 - 사용자 수에 따른 규모 확장성</a>
         </li>
       
         
@@ -914,7 +962,7 @@ Joint Photographic Experts Group에서 개발했고, 손실 압축 방식을 사
   <!-- #access-lastmod -->
 
 
-              <!-- The trending tags list -->
+    <!-- The trending tags list -->
 
 
 
@@ -930,6 +978,171 @@ Joint Photographic Experts Group에서 개발했고, 손실 압축 방식을 사
 
 
 
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -1005,185 +1218,150 @@ Joint Photographic Experts Group에서 개발했고, 손실 압축 방식을 사
     
     
     
-      
-        
-        
-
   
     
     
     
-    
-      
     
   
     
     
     
     
-      
+  
+    
+    
+    
     
   
     
     
     
     
-      
-        
-        
-
   
     
     
     
-    
-      
     
   
     
     
     
     
-      
+  
+    
+    
+    
     
   
     
     
     
     
-      
+  
+    
+    
+    
     
   
     
     
     
     
-      
-        
-        
-
   
     
     
     
-    
-      
     
   
     
     
     
     
-      
+  
+    
+    
+    
     
   
     
     
     
     
-      
+  
+    
+    
+    
     
   
     
     
     
     
-      
+  
+    
+    
+    
     
   
     
     
     
     
-      
-        
-        
-
   
     
     
     
-    
-      
     
   
     
     
     
     
-      
+  
+    
+    
+    
     
   
     
     
     
     
-      
+  
+    
+    
+    
     
   
     
     
     
     
-      
+  
+    
+    
+    
     
   
     
     
     
     
-      
+  
+    
+    
+    
     
   
     
     
     
     
-      
-        
-        
-
   
     
     
     
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -1206,6 +1384,201 @@ Joint Photographic Experts Group에서 개발했고, 손실 압축 방식을 사
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
     
   
@@ -1214,6 +1587,76 @@ Joint Photographic Experts Group에서 개발했고, 손실 압축 방식을 사
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
     
   
     
@@ -1256,22 +1699,6 @@ Joint Photographic Experts Group에서 개발했고, 손실 압축 방식을 사
     
     
     
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -1324,44 +1751,44 @@ Joint Photographic Experts Group에서 개발했고, 손실 압축 방식을 사
     <div class="d-flex flex-wrap mt-3 mb-1 me-3">
       
         
+        <a class="post-tag btn btn-outline-primary" href="/tags/%ED%9A%8C%EA%B3%A0/">회고</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/architecture/">architecture</a>
+      
+        
         <a class="post-tag btn btn-outline-primary" href="/tags/%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC/">라이브러리</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/cli/">CLI</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/%EC%8A%A4%ED%83%80%ED%8A%B8%EC%97%85/">스타트업</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/heic/">HEIC</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/aws/">aws</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/infcon/">INFCON</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/blogging/">blogging</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/jpg/">JPG</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/cache/">cache</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/mac/">MAC</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/chirpy/">chirpy</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/professional/">professional</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/cli/">cli</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/retrospect/">retrospect</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/software/">software</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%82%B9/">네트워킹</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/client-vpn/">client-vpn</a>
       
     </div>
   </section>
 
 
-            </div>
+  </div>
 
-            
-              
-              
+  
+    
+    
 
 
 
@@ -1371,16 +1798,18 @@ Joint Photographic Experts Group에서 개발했고, 손실 압축 방식을 사
   </section>
 
 
-            
-          </aside>
+  
+</aside>
+
         </div>
 
         <div class="row">
           <!-- tail -->
-          <div id="tail-wrapper" class="col-12 col-lg-11 col-xl-9 px-md-4">
-            
-              
-              <!-- Recommend the other 3 posts according to the tags and categories of the current post. -->
+<div id="tail-wrapper" class="col-12 col-lg-11 col-xl-9 px-md-4">
+  
+  
+    
+    <!-- Recommend the other 3 posts according to the tags and categories of the current post. -->
 
 <!-- The total size of related posts -->
 
@@ -1418,9 +1847,9 @@ Joint Photographic Experts Group에서 개발했고, 손실 압축 방식을 사
 
 
 
-            
-              
-              <!-- Navigation buttons at the bottom of the post. -->
+  
+    
+    <!-- Navigation buttons at the bottom of the post. -->
 
 <nav class="post-navigation d-flex justify-content-between" aria-label="Post Navigation">
   
@@ -1438,23 +1867,24 @@ Joint Photographic Experts Group에서 개발했고, 손실 압축 방식을 사
 
   
     <a
-      href="/posts/%E1%84%8B%E1%85%B5%E1%86%AB%E1%84%91%E1%85%B3%E1%84%8F%E1%85%A9%E1%86%AB-%E1%84%82%E1%85%A6%E1%84%90%E1%85%B3%E1%84%8B%E1%85%AF%E1%84%8F%E1%85%B5%E1%86%BC-%E1%84%8C%E1%85%AE%E1%86%AB%E1%84%87%E1%85%B5-%E1%84%8B%E1%85%AA%E1%86%AB%E1%84%85%E1%85%AD!/"
+      href="/posts/%EB%B6%84%EC%82%B0-%EC%8B%9C%EC%8A%A4%ED%85%9C%EC%97%90%EC%84%9C%EC%9D%98-ID/"
       class="btn btn-outline-primary"
       aria-label="Newer"
     >
-      <p>인프콘 네트워킹 준비 완료!</p>
+      <p>분산 시스템에서 UUID 대신 Custom ID를 선택했던 이유</p>
     </a>
   
 </nav>
 
-            
-              
-              <!-- The comments switcher -->
+  
+    
+    <!-- The comments switcher -->
 
 
-            
+  
+  
 
-            <!-- The Footer -->
+  <!-- The Footer -->
 
 <footer
   aria-label="Site Info"
@@ -1464,7 +1894,7 @@ Joint Photographic Experts Group에서 개발했고, 손실 압축 방식을 사
   "
 >
   <p>©
-    <time>2024</time>
+    <time>2026</time>
 
     
       <a href="https://github.com/xonic789">lee seung woo</a>.
@@ -1490,7 +1920,7 @@ Joint Photographic Experts Group에서 개발했고, 손실 압축 방식을 사
   </p>
 </footer>
 
-          </div>
+</div>
         </div>
 
         <!-- The Search results -->
@@ -1564,10 +1994,166 @@ Joint Photographic Experts Group에서 개발했고, 손실 압축 방식을 사
     
     
     
-      
-        
-        
-
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -1577,198 +2163,6 @@ Joint Photographic Experts Group에서 개발했고, 손실 압축 방식을 사
         
         
 
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
   
     
     
@@ -1790,6 +2184,367 @@ Joint Photographic Experts Group에서 개발했고, 손실 압축 방식을 사
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
     
   
@@ -1798,6 +2553,76 @@ Joint Photographic Experts Group에서 개발했고, 손실 압축 방식을 사
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
     
   
     
@@ -1840,22 +2665,6 @@ Joint Photographic Experts Group에서 개발했고, 손실 압축 방식을 사
     
     
     
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -1908,34 +2717,34 @@ Joint Photographic Experts Group에서 개발했고, 손실 압축 방식을 사
     <div class="d-flex flex-wrap mt-3 mb-1 me-3">
       
         
+        <a class="post-tag btn btn-outline-primary" href="/tags/%ED%9A%8C%EA%B3%A0/">회고</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/architecture/">architecture</a>
+      
+        
         <a class="post-tag btn btn-outline-primary" href="/tags/%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC/">라이브러리</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/cli/">CLI</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/%EC%8A%A4%ED%83%80%ED%8A%B8%EC%97%85/">스타트업</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/heic/">HEIC</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/aws/">aws</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/infcon/">INFCON</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/blogging/">blogging</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/jpg/">JPG</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/cache/">cache</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/mac/">MAC</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/chirpy/">chirpy</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/professional/">professional</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/cli/">cli</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/retrospect/">retrospect</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/software/">software</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%82%B9/">네트워킹</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/client-vpn/">client-vpn</a>
       
     </div>
   </section>
@@ -2113,6 +2922,30 @@ Joint Photographic Experts Group에서 개발했고, 손실 압축 방식을 사
 
   
 
+  
+    
+        
+          <!-- Display GoatCounter pageviews -->
+<script>
+  let pv = document.getElementById('pageviews');
+
+  if (pv !== null) {
+    const uri = location.pathname.replace(/\/$/, '');
+    const url = `https://xonic789.goatcounter.com/counter/${encodeURIComponent(uri)}.json`;
+
+    fetch(url)
+      .then((response) => response.json())
+      .then((data) => {
+        pv.innerText = new Intl.NumberFormat().format(data.count);
+      })
+      .catch((error) => {
+        pv.innerText = '1';
+      });
+  }
+</script>
+
+        
+    
   
 
 

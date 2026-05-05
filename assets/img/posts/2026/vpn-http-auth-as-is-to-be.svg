@@ -1,0 +1,112 @@
+<svg width="1200" height="860" viewBox="0 0 1200 860" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">VPN and HTTP authentication as-is to-be comparison</title>
+  <desc id="desc">Comparison diagram showing an as-is model where VPN access expands into implicit trust, and a to-be model where VPN mutual TLS, tunnel protection, HTTPS transport, and HTTP application authentication are explicitly separated.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="860" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F8FAFC"/>
+      <stop offset="1" stop-color="#EEF4FF"/>
+    </linearGradient>
+    <linearGradient id="leftCard" x1="60" y1="150" x2="560" y2="770" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FEF2F2"/>
+      <stop offset="1" stop-color="#FFE4E6"/>
+    </linearGradient>
+    <linearGradient id="rightCard" x1="640" y1="150" x2="1140" y2="770" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ECFDF5"/>
+      <stop offset="1" stop-color="#DCFCE7"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%" filterUnits="objectBoundingBox">
+      <feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#0F172A" flood-opacity="0.10"/>
+    </filter>
+    <marker id="arrowBlue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10V0Z" fill="#2563EB"/>
+    </marker>
+    <marker id="arrowRed" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10V0Z" fill="#DC2626"/>
+    </marker>
+    <marker id="arrowGreen" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10V0Z" fill="#16A34A"/>
+    </marker>
+    <style>
+      .title { font: 700 30px "Pretendard", "Apple SD Gothic Neo", "Noto Sans KR", sans-serif; fill: #0F172A; }
+      .section { font: 700 22px "Pretendard", "Apple SD Gothic Neo", "Noto Sans KR", sans-serif; fill: #0F172A; }
+      .label { font: 700 17px "Pretendard", "Apple SD Gothic Neo", "Noto Sans KR", sans-serif; fill: #0F172A; }
+      .body { font: 500 15px "Pretendard", "Apple SD Gothic Neo", "Noto Sans KR", sans-serif; fill: #334155; }
+      .small { font: 500 13px "Pretendard", "Apple SD Gothic Neo", "Noto Sans KR", sans-serif; fill: #475569; }
+      .pillRed { font: 700 13px "Pretendard", "Apple SD Gothic Neo", "Noto Sans KR", sans-serif; fill: #B91C1C; }
+      .pillBlue { font: 700 13px "Pretendard", "Apple SD Gothic Neo", "Noto Sans KR", sans-serif; fill: #1D4ED8; }
+      .pillGreen { font: 700 13px "Pretendard", "Apple SD Gothic Neo", "Noto Sans KR", sans-serif; fill: #047857; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="860" rx="32" fill="url(#bg)"/>
+  <text x="60" y="78" class="title">VPN 인증과 HTTP 인증: As-Is vs To-Be</text>
+  <text x="60" y="112" class="body">왼쪽은 VPN 접속이 내부 신뢰로 번지는 모델이고, 오른쪽은 mTLS, 터널 보호, HTTPS, HTTP 인증을 분리한 모델이다.</text>
+
+  <g filter="url(#shadow)">
+    <rect x="60" y="150" width="500" height="650" rx="32" fill="url(#leftCard)" stroke="#FDA4AF" stroke-width="2"/>
+    <text x="90" y="205" class="section">As-Is</text>
+    <text x="90" y="236" class="body">VPN 접속 사실이 곧 내부 서비스 신뢰로 확대 해석되는 구조</text>
+
+    <rect x="90" y="278" width="150" height="86" rx="22" fill="#FFFFFF" stroke="#FBCFE8"/>
+    <text x="117" y="316" class="label">사용자 PC</text>
+    <text x="117" y="340" class="small">VPN Client</text>
+
+    <rect x="290" y="278" width="220" height="108" rx="24" fill="#FFFFFF" stroke="#FBCFE8"/>
+    <text x="320" y="320" class="label">VPN Endpoint</text>
+    <text x="320" y="346" class="small">mTLS 결과가 앱 권한처럼 오해됨</text>
+
+    <rect x="130" y="468" width="340" height="190" rx="26" fill="#FFFFFF" stroke="#FBCFE8"/>
+    <text x="164" y="512" class="label">내부 서비스</text>
+    <text x="164" y="542" class="body">Grafana / Backoffice / Internal API</text>
+    <text x="164" y="572" class="small">일부는 로그인, 일부는 망 안이라는 이유로 약한 통제</text>
+    <rect x="164" y="600" width="118" height="34" rx="17" fill="#FEE2E2"/>
+    <text x="188" y="622" class="pillRed">Trust by Network</text>
+  </g>
+
+  <path d="M240 322H290" stroke="#DC2626" stroke-width="4" stroke-linecap="round" marker-end="url(#arrowRed)"/>
+  <path d="M400 386V468" stroke="#DC2626" stroke-width="4" stroke-linecap="round" marker-end="url(#arrowRed)"/>
+  <text x="140" y="718" class="small">문제: 터널 주체 검증과 HTTP 행위 권한 판단이 섞임</text>
+  <text x="140" y="744" class="small">결과: 오프보딩, 감사 추적, 권한 분리가 어려워짐</text>
+
+  <g filter="url(#shadow)">
+    <rect x="640" y="150" width="500" height="650" rx="32" fill="url(#rightCard)" stroke="#86EFAC" stroke-width="2"/>
+    <text x="670" y="205" class="section">To-Be</text>
+    <text x="670" y="236" class="body">mTLS, 터널 암호화, HTTPS, HTTP 요청 인증을 계층별로 분리</text>
+
+    <rect x="670" y="278" width="140" height="86" rx="22" fill="#FFFFFF" stroke="#BBF7D0"/>
+    <text x="696" y="316" class="label">사용자 PC</text>
+    <text x="696" y="340" class="small">VPN Client</text>
+
+    <rect x="860" y="266" width="250" height="118" rx="24" fill="#FFFFFF" stroke="#BBF7D0"/>
+    <text x="892" y="306" class="label">VPN Endpoint</text>
+    <text x="892" y="332" class="small">mTLS로 터널 주체만 검증</text>
+    <rect x="892" y="344" width="92" height="30" rx="15" fill="#DBEAFE"/>
+    <text x="918" y="364" class="pillBlue">mTLS</text>
+
+    <rect x="720" y="448" width="340" height="212" rx="26" fill="#FFFFFF" stroke="#BBF7D0"/>
+    <text x="752" y="492" class="label">내부 HTTPS 서비스</text>
+    <text x="752" y="522" class="body">Grafana / Backoffice / Internal API</text>
+    <text x="752" y="552" class="small">전송 보호: 별도 HTTPS 세션</text>
+    <text x="752" y="576" class="small">요청 인증: Session / OIDC / Authorization</text>
+    <rect x="752" y="602" width="84" height="30" rx="15" fill="#DBEAFE"/>
+    <text x="774" y="622" class="pillBlue">HTTPS</text>
+    <rect x="848" y="602" width="158" height="30" rx="15" fill="#DCFCE7"/>
+    <text x="874" y="622" class="pillGreen">App Authentication</text>
+  </g>
+
+  <path d="M810 322H860" stroke="#2563EB" stroke-width="4" stroke-linecap="round" marker-end="url(#arrowBlue)"/>
+  <path d="M985 384V448" stroke="#16A34A" stroke-width="4" stroke-linecap="round" marker-end="url(#arrowGreen)"/>
+  <text x="720" y="718" class="small">결과: VPN 접속 성공은 사설망 경로만 의미한다</text>
+  <text x="720" y="744" class="small">HTTP 요청 권한은 각 서비스가 다시 검증한다</text>
+
+  <rect x="920" y="56" width="100" height="40" rx="20" fill="#FEE2E2"/>
+  <text x="947" y="81" class="pillRed">As-Is</text>
+  <rect x="1036" y="56" width="104" height="40" rx="20" fill="#DCFCE7"/>
+  <text x="1063" y="81" class="pillGreen">To-Be</text>
+
+  <rect x="404" y="662" width="106" height="34" rx="17" fill="#FEE2E2"/>
+  <text x="428" y="684" class="pillRed">Implicit Trust</text>
+
+  <rect x="932" y="664" width="132" height="34" rx="17" fill="#DCFCE7"/>
+  <text x="957" y="686" class="pillGreen">Explicit Boundaries</text>
+</svg>
