@@ -1,18 +1,19 @@
 ---
 title: Quartz misfire는 스케줄러 문제가 아니라 워커 기아 문제일 수 있다
-date: 2026-05-08 21:00:00 +0900
-description: Quartz misfire를 단순 스케줄러 설정 문제로 보면 원인을 놓치기 쉽다. 실제로는 다른 잡의 retry 폭주가 worker를 잠식한 사례를 통해 진단 순서와 구조적 대응을 정리한 글이다.
+date: 2026-05-07 10:10:06.000000000 +09:00
+description: Quartz misfire를 단순 스케줄러 설정 문제로 보면 원인을 놓치기 쉽다. 실제로는 다른 잡의 retry 폭주가 worker를
+  잠식한 사례를 통해 진단 순서와 구조적 대응을 정리한 글이다.
 categories:
-  - 백엔드
-  - 운영
+- 백엔드
+- 운영
 tags:
-  - quartz
-  - scheduler
-  - retry
-  - cloudwatch
-  - incident
+- quartz
+- scheduler
+- retry
+- cloudwatch
+- incident
 pin: false
-published: false
+published: true
 ---
 
 이번 사고에서 먼저 보인 건 `AirQualityTasklet`이 제시간에 돌지 않았다는 사실이었다.  
