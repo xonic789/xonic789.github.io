@@ -1,7 +1,9 @@
 ---
 title: '같은 에이전트, 다른 답: AWS Bedrock AgentCore로 만든 사용자별 권한 분리'
 date: '2026-06-05 21:00:00 +0900'
-description: 사내 Slack 에이전트를 AWS Bedrock AgentCore 위에 올리면서, 같은 에이전트에게 같은 질문을 해도 사용자 권한에 따라 답이 달라지는 구조를 만들었다. 사용자별 3LO와 토큰 vault를 실제로 동작시키고 Notion·Jira·GitHub를 붙이기까지 만난 함정과 그 우회를 정리한 글이다.
+description: 사내 Slack 에이전트를 AWS Bedrock AgentCore 위에 올리면서, 같은 에이전트에게 같은 질문을 해도 사용자
+  권한에 따라 답이 달라지는 구조를 만들었다. 사용자별 3LO와 토큰 vault를 실제로 동작시키고 Notion·Jira·GitHub를 붙이기까지
+  만난 함정과 그 우회를 정리한 글이다.
 categories:
 - AWS
 - AI 에이전트
@@ -15,7 +17,7 @@ tags:
 - slack
 pin: false
 mermaid: true
-published: false
+published: true
 ---
 
 ## 문제: 같은 에이전트, 같은 질문, 그런데 답이 달라야 한다
