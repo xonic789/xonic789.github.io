@@ -12,7 +12,8 @@ POST_DIR = File.join(REPO_ROOT, "_posts")
 KST_OFFSET = "+09:00"
 
 def parse_frontmatter(path)
-  content = File.read(path)
+  # Cron can run without a UTF-8 locale, so force draft reads as UTF-8.
+  content = File.read(path, mode: "r:BOM|UTF-8")
   match = content.match(/\A---\n(.*?)\n---\n/m)
   return nil unless match
 
@@ -49,7 +50,7 @@ end
 def rewrite_as_post(source_path, target_path, frontmatter, body)
   frontmatter["published"] = true
   rendered = "#{dump_frontmatter(frontmatter)}\n#{body}"
-  File.write(target_path, rendered)
+  File.write(target_path, rendered, mode: "w:UTF-8")
   File.delete(source_path)
 end
 
