@@ -49,22 +49,9 @@ AWS Bedrock AgentCore는 이 인프라를 빌딩블록으로 제공한다 — Ru
 
 ## 아키텍처
 
-![아키텍처 개요](/assets/img/posts/2026/2026-06-05-agentcore-architecture.png)
+![AWS 인프라 아키텍처](/assets/img/posts/2026/2026-06-05-agentcore-architecture.png)
 
 권한 모델을 대비시키려고 두 종류의 에이전트를 만들었다.
-
-```mermaid
-flowchart TD
-    U([Slack 사용자]) -->|@mention| EV[Events API → API Gateway]
-    EV --> R[Lambda 라우터<br/>중복 제거 · OAuth 세션 · 토큰 민팅 · 라우팅]
-    R -->|invoke_agent_runtime| G[범용 에이전트 Runtime<br/>Strands + Claude Sonnet 4.6]
-    R -->|invoke_agent_runtime| D[도메인 에이전트 Runtime]
-    G --> HUB[Gateway 허브<br/>Notion · Jira · GitHub<br/>사용자별 3LO]
-    D --> GH[GitHub MCP<br/>read-only · 고정 레포 allowlist · 공유 토큰]
-    G <--> ID[(AgentCore Identity<br/>사용자별 토큰 vault)]
-    G <--> MEM[(AgentCore Memory STM<br/>세션=스레드 · actor=사용자)]
-    D <--> MEM
-```
 
 - **범용 에이전트** — Notion·Jira·GitHub를 가로지르는 사용자별 3LO 에이전트. 처음 부르면 *본인에게만 보이는* 동의 링크(ephemeral DM)를 보내고, 한 번 승인하면 다음부턴 vault에서 바로 토큰을 꺼내 쓴다. 프롬프트가 가리키는 provider만 골라 동의를 받기 때문에, Notion만 쓰는 사람을 Jira/GitHub 동의로 끌고 가지 않는다.
 - **도메인 에이전트** — 특정 도메인의 여러 레포를 read-only로 가로지르는 GitHub 에이전트. "앱에서 X가 안 떠" 같은 질문에 여러 플랫폼 레포(iOS/Android/Frontend/Backend)를 cross-repo로 뒤져 PR 번호·파일 경로를 인용해 원인을 추정한다.
