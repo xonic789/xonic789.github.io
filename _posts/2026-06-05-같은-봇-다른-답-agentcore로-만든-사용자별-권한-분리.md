@@ -95,6 +95,8 @@ sequenceDiagram
 
 AWS 빌트인 `NotionOauth2`가 가리키는 건 REST API 쪽이라, MCP 서버는 그 토큰을 거부한다. `mcp.notion.com/.well-known/oauth-authorization-server`를 보면 issuer/authorization/token endpoint가 전부 `mcp.notion.com` 자체로 잡혀 있다. 해결은 `mcp.notion.com`의 Dynamic Client Registration(RFC 7591)으로 직접 client를 등록하고, `CustomOauth2` provider로 그 endpoint를 박는 것이었다.
 
+> 누구나 공개로 확인할 수 있다 — `curl https://mcp.notion.com/.well-known/oauth-authorization-server` 하면 `issuer`·`authorization_endpoint`·`token_endpoint`·`registration_endpoint`가 모두 `mcp.notion.com`으로 떨어진다(`api.notion.com`이 아니다). `registration_endpoint`(`/register`)가 존재한다는 것 자체가 RFC 7591 동적 등록을 쓸 수 있다는 뜻이다.
+
 일반화하면 이렇다. **"MCP 서버"와 "그 서비스의 REST API"가 같은 OAuth를 쓸 거라고 가정하지 말 것.** 외부 OAuth를 셋업하기 전에 `/.well-known/oauth-authorization-server`부터 확인하라. 이걸 일찍 봤으면 다섯 시간을 아꼈다.
 
 ## provider를 늘리며 — Jira와 GitHub 3LO의 서로 다른 함정
@@ -105,6 +107,8 @@ Notion 하나가 돌기 시작하자 Jira와 GitHub를 붙였다(Jira는 read뿐
 
 - **앱 Distribution을 Sharing으로 바꿔야 한다.** 개발 모드 그대로 두면 앱 소유자 본인만 인증되고, 다른 사용자는 동의 화면에서 "You don't have access"를 만난다. 나만 되고 동료는 안 되는 전형적인 증상이다.
 - **`offline_access` scope가 필수다.** 이게 없으면 access token이 약 1시간 뒤 만료되고 refresh가 불가능해, 사용자가 계속 재인증을 해야 한다. "배포할 때마다 다시 인증되는 것 같다"의 진짜 원인이 이거였고, 사실 배포와는 무관했다.
+
+> 둘 다 Atlassian 공식 OAuth 2.0 (3LO) 문서로 확인된다 — 앱은 기본 private("only you can install and use it")이라 다른 사용자에게 열려면 sharing(distribution)을 켜야 하고, refresh token을 받으려면 authorization URL의 `scope`에 `offline_access`를 넣어야 한다. ([developer.atlassian.com](https://developer.atlassian.com/cloud/jira/platform/oauth-2-3lo-apps/))
 
 **GitHub은 더 쉬웠다.** base URL이 고정(`api.github.com`)이라 Atlassian의 cloudId 같은 추가 식별자가 필요 없고, OAuth App 토큰은 만료되지 않아 `offline_access`도 신경 쓸 게 없다. 단 하나, **조직 소유의 private 레포는 조직 차원에서 OAuth App 접근을 승인**해야 보인다(public 레포는 불필요).
 
