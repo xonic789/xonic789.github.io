@@ -16,7 +16,7 @@ tags:
 - mtls
 - security
 published: true
-pin: true
+pin: false
 ---
 
 AWS Client VPN을 만지다 보면 `.ovpn` 파일이 자꾸 하나의 "암호화된 VPN 파일"처럼 느껴진다.  

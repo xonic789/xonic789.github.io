@@ -4,7 +4,7 @@ date: 2024-04-05 11:00:00 +0900
 description: 소프트웨어 장인정신을 읽고 개발자의 책임감, 프로페셔널리즘, 지속적인 성장에 대해 정리한 글입니다.
 categories: [소프트웨어 프로페셔널]
 tags: [소프트웨어, software, professional, 책읽기]    
-pin: true
+pin: false
 published: true
 ---
 
