@@ -36,13 +36,11 @@ jobs:
   # Build job
   build:
     runs-on: ubuntu-latest
-    env:
-      RUNNER_TOOL_CACHE: ${{ github.workspace }}/.toolcache
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
           node-version: 20
           cache: npm
@@ -50,80 +48,28 @@ jobs:
         run: npm ci
       - name: Build frontend assets
         run: npm run build
-      - name: Prepare Ruby toolcache when missing
-        if: ${{ runner.os == 'Linux' }}
-        env:
-          RUBY_VERSION: 3.1.4
-        run: |
-          set -euo pipefail
-
-          TOOLCACHE_ROOT="${RUNNER_TOOL_CACHE:-/opt/hostedtoolcache}"
-          RUBY_PREFIX="${TOOLCACHE_ROOT}/Ruby/${RUBY_VERSION}/x64"
-          COMPLETE_FILE="${RUBY_PREFIX}.complete"
-          if [ -f "$COMPLETE_FILE" ]; then
-            echo "Ruby ${RUBY_VERSION} already prepared in toolcache"
-            if command -v sudo >/dev/null 2>&1; then
-              sudo chown -R "$(id -u):$(id -g)" "$RUBY_PREFIX" "$COMPLETE_FILE" || true
-            fi
-            exit 0
-          fi
-
-          # Serialize installation to avoid parallel writes to toolcache.
-          lock_file=/tmp/ruby-toolcache-install.lock
-          exec 9>"$lock_file"
-          flock 9
-
-          if [ -f "$COMPLETE_FILE" ]; then
-            echo "Ruby ${RUBY_VERSION} became available while waiting lock"
-            if command -v sudo >/dev/null 2>&1; then
-              sudo chown -R "$(id -u):$(id -g)" "$RUBY_PREFIX" "$COMPLETE_FILE" || true
-            fi
-            exit 0
-          fi
-
-          if command -v sudo >/dev/null 2>&1; then
-            SUDO="sudo"
-          else
-            SUDO=""
-          fi
-
-          $SUDO apt-get update
-          $SUDO apt-get install -y --no-install-recommends \
-            autoconf bison build-essential libssl-dev libyaml-dev \
-            libreadline-dev zlib1g-dev libncurses5-dev libffi-dev \
-            libgdbm-dev rustc
-
-          if ! command -v ruby-build >/dev/null 2>&1; then
-            git clone --depth 1 https://github.com/rbenv/ruby-build.git /tmp/ruby-build
-            $SUDO /tmp/ruby-build/install.sh
-          fi
-
-          $SUDO mkdir -p "$(dirname "$RUBY_PREFIX")"
-          $SUDO ruby-build "$RUBY_VERSION" "$RUBY_PREFIX"
-          $SUDO touch "$COMPLETE_FILE"
-
-          # Ensure later steps (ruby/setup-ruby -> gem install bundler) can write without sudo.
-          OWNER_UID="$(id -u)"
-          OWNER_GID="$(id -g)"
-          $SUDO chown -R "$OWNER_UID:$OWNER_GID" "$RUBY_PREFIX" "$COMPLETE_FILE"
-
       - name: Setup Ruby
-        uses: ruby/setup-ruby@8575951200e472d5f2d95c625da0c7bec8217c42 # v1.161.0
+        uses: ruby/setup-ruby@d45b1a4e94b71acab930e56e79c6aa188764e7f9 # v1
         with:
           ruby-version: '3.1.4'
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
           cache-version: 0 # Increment this number if you need to re-download cached gems
       - name: Setup Pages
         id: pages
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b # v5
       - name: Build with Jekyll
         # Outputs to the './_site' directory by default
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
           JEKYLL_ENV: production
+      - name: Verify generated site
+        run: >-
+          bundle exec htmlproofer _site
+          --disable-external=true
+          --ignore-urls '/^http:\/\/127\.0\.0\.1/,/^http:\/\/0\.0\.0\.0/,/^http:\/\/localhost/'
       - name: Upload artifact
         # Automatically uploads an artifact from the './_site' directory by default
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa # v3
 
   # Deployment job
   deploy:
@@ -135,4 +81,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e # v4
