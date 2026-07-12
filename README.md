@@ -4,7 +4,7 @@ Personal engineering blog built with Jekyll and the Chirpy theme.
 
 ## Local development
 
-The deployment workflow uses Node.js 20, Ruby 3.1.4, and the Bundler version recorded in `Gemfile.lock`.
+The deployment workflow uses Node.js 20, the Ruby version in `.ruby-version`, and the Bundler version recorded in `Gemfile.lock`.
 
 ```sh
 npm ci
