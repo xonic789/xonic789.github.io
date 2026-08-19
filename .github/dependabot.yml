@@ -1,0 +1,75 @@
+version: 2
+
+# 이 저장소의 npm 의존성은 전부 빌드·개발 도구다. 배포되는 것은 Jekyll 이
+# 생성한 정적 파일과 Worker 번들뿐이라, 업데이트를 건건이 받을 이유가 없다.
+#
+# 그룹은 applies-to 별로 따로 걸어야 한다. 지정하지 않으면 version-updates
+# 에만 적용되어, 정작 시끄러운 security-updates 는 여전히 PR 하나씩 열린다.
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: monthly
+    open-pull-requests-limit: 3
+    commit-message:
+      prefix: deps
+    groups:
+      blog-tooling:
+        applies-to: version-updates
+        patterns:
+          - "*"
+      blog-tooling-security:
+        applies-to: security-updates
+        patterns:
+          - "*"
+
+  - package-ecosystem: npm
+    directory: /workers/pageviews
+    schedule:
+      interval: monthly
+    open-pull-requests-limit: 3
+    commit-message:
+      prefix: deps
+    groups:
+      worker-tooling:
+        applies-to: version-updates
+        patterns:
+          - "*"
+      worker-tooling-security:
+        applies-to: security-updates
+        patterns:
+          - "*"
+
+  - package-ecosystem: bundler
+    directory: /
+    schedule:
+      interval: monthly
+    open-pull-requests-limit: 3
+    commit-message:
+      prefix: deps
+    groups:
+      jekyll:
+        applies-to: version-updates
+        patterns:
+          - "*"
+      jekyll-security:
+        applies-to: security-updates
+        patterns:
+          - "*"
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
+    open-pull-requests-limit: 3
+    commit-message:
+      prefix: ci
+    groups:
+      actions:
+        applies-to: version-updates
+        patterns:
+          - "*"
+      actions-security:
+        applies-to: security-updates
+        patterns:
+          - "*"
