@@ -3,3 +3,4 @@
 node_modules/
 _site/
 assets/js/dist/
+.wrangler/

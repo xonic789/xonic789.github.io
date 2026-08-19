@@ -1,0 +1,25 @@
+{
+  "name": "blog-pageviews",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "migrate:local": "wrangler d1 migrations apply blog-pageviews --local",
+    "migrate:remote": "wrangler d1 migrations apply blog-pageviews --remote",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "@cloudflare/vitest-pool-workers": "^0.9.0",
+    "vitest": "~3.2.0",
+    "wrangler": "^4.124.0"
+  },
+  "allowScripts": {
+    "workerd@1.20251011.0": true,
+    "workerd@1.20260815.1": true,
+    "esbuild@0.25.4": true,
+    "esbuild@0.28.2": true,
+    "esbuild@0.28.1": true
+  }
+}

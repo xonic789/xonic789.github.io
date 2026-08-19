@@ -1,0 +1,53 @@
+<!-- Display pageviews from the self-hosted Cloudflare Worker counter -->
+<script>
+  (function () {
+    const pv = document.getElementById('pageviews');
+
+    if (pv === null) {
+      return;
+    }
+
+    const endpoint = '{{ site.pageviews.endpoint }}'.replace(/\/+$/, '');
+    const path = location.pathname;
+    const visitKey = `pageview:${path}`;
+
+    /* sessionStorage throws in some privacy modes; a failure just means we count the visit again. */
+    const alreadyCounted = (() => {
+      try {
+        return sessionStorage.getItem(visitKey) === '1';
+      } catch (e) {
+        return false;
+      }
+    })();
+
+    const request = alreadyCounted
+      ? fetch(`${endpoint}/views?path=${encodeURIComponent(path)}`)
+      : fetch(`${endpoint}/views`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ path: path })
+        });
+
+    request
+      .then((response) => (response.ok ? response.json() : Promise.reject(new Error(response.status))))
+      .then((data) => {
+        pv.innerText = new Intl.NumberFormat().format(data.count);
+
+        if (!alreadyCounted) {
+          try {
+            sessionStorage.setItem(visitKey, '1');
+          } catch (e) {
+            /* nothing to do */
+          }
+        }
+      })
+      .catch(() => {
+        /* Hide the counter rather than showing a made-up number when the API is unreachable. */
+        const holder = pv.closest('span');
+
+        if (holder !== null) {
+          holder.classList.add('d-none');
+        }
+      });
+  })();
+</script>

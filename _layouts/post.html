@@ -83,7 +83,13 @@ tail_includes:
 
         <div>
           <!-- pageviews -->
-          {% if site.pageviews.provider and site.analytics[site.pageviews.provider].id %}
+          {% if site.pageviews.provider == 'cfworker' %}
+            {% assign pageviews_enabled = site.pageviews.endpoint %}
+          {% elsif site.pageviews.provider %}
+            {% assign pageviews_enabled = site.analytics[site.pageviews.provider].id %}
+          {% endif %}
+
+          {% if pageviews_enabled and pageviews_enabled != empty %}
             <span>
               <em id="pageviews">
                 <i class="fas fa-spinner fa-spin small"></i>

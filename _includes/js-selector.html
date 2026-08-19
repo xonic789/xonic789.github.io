@@ -105,6 +105,10 @@
         {% if site.analytics[provider].id != empty and site.analytics[provider].id %}
           {% include pageviews/{{ provider }}.html %}
         {% endif %}
+      {% when 'cfworker' %}
+        {% if site.pageviews.endpoint != empty and site.pageviews.endpoint %}
+          {% include pageviews/cfworker.html %}
+        {% endif %}
     {% endcase %}
   {% endif %}
 {% endif %}

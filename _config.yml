@@ -61,12 +61,18 @@ webmaster_verifications:
 analytics:
   google:
     id: # fill in your Google Analytics ID
+  # Collects visit stats only. The pageview number shown on posts comes from
+  # the Cloudflare Worker below, so a goatcounter.com outage no longer hides it.
   goatcounter:
     id: xonic789
 
 # Pageviews settings
+#
+# `cfworker` reads from the self-hosted counter in `workers/pageviews`.
+# `endpoint` is the deployed Worker URL, without a trailing slash.
 pageviews:
-  provider: goatcounter
+  provider: cfworker
+  endpoint: https://blog-pageviews.blog-pageviews.workers.dev
 
 # Prefer color scheme setting.
 #
@@ -209,6 +215,7 @@ exclude:
   - LICENSE
   - rollup.config.js
   - package*.json
+  - workers
 
 jekyll-archives:
   enabled: [categories, tags]

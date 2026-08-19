@@ -1,0 +1,15 @@
+name = "blog-pageviews"
+main = "src/index.js"
+compatibility_date = "2025-10-11"
+
+# Origins allowed to call this Worker from a browser.
+# Add a local origin (e.g. http://127.0.0.1:4000) when testing the blog locally.
+[vars]
+ALLOWED_ORIGINS = "https://xonic789.github.io"
+PATH_PREFIX = "/posts"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "blog-pageviews"
+database_id = "742fba4f-86d3-4e68-aea3-3ef24d29cc89"
+migrations_dir = "migrations"
