@@ -5,6 +5,11 @@ version: 2
 #
 # 그룹은 applies-to 별로 따로 걸어야 한다. 지정하지 않으면 version-updates
 # 에만 적용되어, 정작 시끄러운 security-updates 는 여전히 PR 하나씩 열린다.
+#
+# major 는 제외한다. Babel 8 을 실제로 적용해 본 결과 생성된 번들이 Babel 7 과
+# 바이트 단위로 같았고, @rollup/plugin-babel 이 아직 Babel 8 을 peer 로 받지
+# 않아 override 로 강제해야만 설치됐다. 얻는 것 없이 부채만 남는 교체였다.
+# 이 제외는 version-update 에만 걸리므로, 보안 패치는 major 라도 계속 올라온다.
 updates:
   - package-ecosystem: npm
     directory: /
@@ -13,6 +18,9 @@ updates:
     open-pull-requests-limit: 3
     commit-message:
       prefix: deps
+    ignore:
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]
     groups:
       blog-tooling:
         applies-to: version-updates
@@ -30,6 +38,9 @@ updates:
     open-pull-requests-limit: 3
     commit-message:
       prefix: deps
+    ignore:
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]
     groups:
       worker-tooling:
         applies-to: version-updates
@@ -47,6 +58,9 @@ updates:
     open-pull-requests-limit: 3
     commit-message:
       prefix: deps
+    ignore:
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]
     groups:
       jekyll:
         applies-to: version-updates
