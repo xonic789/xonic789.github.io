@@ -57,3 +57,23 @@ npx wrangler d1 execute blog-pageviews --remote \
   --command "INSERT INTO pageviews (path, count) VALUES ('/posts/foo', 123)
              ON CONFLICT(path) DO UPDATE SET count = excluded.count"
 ```
+
+## 이 저장소의 git 인증
+
+이 머신의 git 은 `gh auth git-credential` 을 통해 자격증명을 받는다. 곧 **gh 의 활성
+계정이 곧 push 권한**이라, 다른 계정이 활성인 동안에는 이 저장소에 push 가 거부된다.
+
+그래서 `.git/config` 에 이 저장소 전용 helper 를 박아두었다. 활성 계정과 무관하게
+항상 `xonic789` 토큰을 쓴다.
+
+```bash
+git config --local --get-all credential.https://github.com.helper
+```
+
+새로 클론했다면 다시 설정해야 한다.
+
+```bash
+git config --local --replace-all credential.https://github.com.helper ""
+git config --local --add credential.https://github.com.helper \
+  '!f() { test "$1" = get && printf "username=xonic789\npassword=%s\n" "$(gh auth token --user xonic789)"; }; f'
+```
